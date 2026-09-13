@@ -2,6 +2,7 @@
 // Zee Auto Park Website Settings
 // =========================
 const WHATSAPP_NUMBER = "7034041366"; // WhatsApp number for sending request messages
+const WA_DEFAULT_COUNTRY_CODE = "91";
 const CALL_NUMBER = "918078050269";
 const BUSINESS_NAME = "Zee Auto Park";
 
@@ -192,6 +193,19 @@ const partCategoryIcons = {
 
 const $ = id => document.getElementById(id);
 const toast = msg => { $("toast").textContent=msg; $("toast").classList.add("show"); setTimeout(()=> $("toast").classList.remove("show"),2600); };
+function normalizeWhatsAppNumber(raw, defaultCountryCode = ""){
+  const digits = String(raw || "").replace(/\D/g, "");
+  if (!digits) return "";
+  if (defaultCountryCode && !digits.startsWith(defaultCountryCode)) {
+    return `${defaultCountryCode}${digits.replace(/^0+/, "")}`;
+  }
+  return digits;
+}
+function buildWhatsAppUrl(message, rawNumber, defaultCountryCode = ""){
+  const number = normalizeWhatsAppNumber(rawNumber, defaultCountryCode);
+  if (!number) return "";
+  return `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
+}
 
 function getPartVisual(p){
   const categoryIcon = partCategoryIcons[p[2]] || "🧰";
@@ -272,10 +286,13 @@ function sendWhatsApp(){
   const name=getValue("name"), phone=getValue("phone"), address=getValue("address");
   if(!state.brand||!state.model){toast("Please select your car brand and model.");$("cars").scrollIntoView({behavior:"smooth"});return;}
   if(!name){toast("Please enter your name.");$("name").focus();return;}
-  if(!phone||phone.replace(/\D/g,"").length<8){toast("Please enter a valid WhatsApp number.");$("phone").focus();return;}
+  const normalizedPhone = normalizeWhatsAppNumber(phone);
+  if(!normalizedPhone || normalizedPhone.length < 8){toast("Please enter a valid WhatsApp number.");$("phone").focus();return;}
   if(!address){toast("Please enter your service location.");$("address").focus();return;}
   if(WHATSAPP_NUMBER.includes("X")){toast("Please add the client's WhatsApp number in script.js.");return;}
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(makeMessage())}`,"_blank");
+  const messageUrl = buildWhatsAppUrl(makeMessage(), WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+  if (!messageUrl) { toast("WhatsApp number is missing."); return; }
+  window.open(messageUrl, "_blank");
 }
 function clearAll(){
   state.brand="";state.model="";state.year="";state.services.clear();state.parts.clear();state.location="Home";state.coordinates=null;
@@ -289,7 +306,7 @@ function init(){
     const service=e.target.closest("[data-service]"); if(service) toggleService(service.dataset.service);
     const part=e.target.closest("[data-part]"); if(part) togglePart(part.dataset.part);
     const loc=e.target.closest("[data-location]"); if(loc){state.location=loc.dataset.location;document.querySelectorAll(".location-card").forEach(x=>x.classList.toggle("active",x===loc));updateSummary();}
-    const wa=e.target.closest("[data-whatsapp]"); if(wa){e.preventDefault();if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I would like to enquire about your car repair and spare-parts service.")}`,"_blank");}
+    const wa=e.target.closest("[data-whatsapp]"); if(wa){e.preventDefault();if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}const messageUrl = buildWhatsAppUrl("Hello, I would like to enquire about your car repair and spare-parts service.", WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE); if(!messageUrl){toast("WhatsApp number is missing."); return;}window.open(messageUrl,"_blank");}
   });
   $("modelSelect").addEventListener("change",e=>{state.model=e.target.value;updateSummary();$("selectedCar").textContent=state.model?`${state.brand} ${state.model}${state.year?" · "+state.year:""}`:"Choose a model";});
   $("carYear").addEventListener("input",e=>{state.year=e.target.value;updateSummary();if(state.brand&&state.model)$("selectedCar").textContent=`${state.brand} ${state.model}${state.year?" · "+state.year:""}`;});
