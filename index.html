@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional car repair, servicing and spare-parts assistance at your location.">
+  <meta name="theme-color" content="#0b0d10">
+  <title>AutoCare | Car Repair & Spare Parts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" id="home">
+    <div class="container nav">
+      <a class="logo" href="#home"><span class="logo-mark">A</span><span>Auto<span>Care</span></span></a>
+      <nav class="desktop-nav">
+        <a href="#services">Services</a><a href="#cars">Cars</a><a href="#parts">Spare Parts</a><a href="#how">How It Works</a>
+      </nav>
+      <a class="nav-wa" href="#" data-whatsapp>WhatsApp <span>↗</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services">Services</a><a href="#cars">Cars</a><a href="#parts">Spare Parts</a><a href="#how">How It Works</a>
+      <a class="mobile-wa" href="#" data-whatsapp>Chat on WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <div class="eyebrow">🚗 ON-SITE CAR SERVICE</div>
+          <h1>Car Repair & Spare Parts <em>at Your Location.</em></h1>
+          <p>Professional repairs, servicing and spare-parts replacement wherever you are. Select your car, tell us what you need and send your request on WhatsApp.</p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary">Book a Service <span>→</span></a>
+            <a href="#" class="btn btn-outline" data-whatsapp>WhatsApp Us</a>
+          </div>
+          <div class="trust-row"><span>✓ On-Site Service</span><span>✓ Quality Parts</span><span>✓ Fast Response</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick container" id="booking">
+      <div class="section-head">
+        <div><span class="eyebrow dark">START HERE</span><h2>What does your car need?</h2></div>
+        <span class="step">01 / 04</span>
+      </div>
+      <div class="service-grid" id="quickServices"></div>
+    </section>
+
+    <section class="section container" id="cars">
+      <div class="section-head">
+        <div><span class="eyebrow dark">YOUR VEHICLE</span><h2>Select your car</h2><p>Choose a brand and model so we can understand your vehicle.</p></div>
+        <span class="step">02 / 04</span>
+      </div>
+      <div class="brand-scroll" id="brands"></div>
+      <div class="model-panel" id="modelPanel">
+        <label for="modelSelect">Select Model</label>
+        <select id="modelSelect"><option value="">Choose a model</option></select>
+        <label for="carYear">Model Year <span>(optional)</span></label>
+        <input id="carYear" type="number" min="1980" max="2030" placeholder="e.g. 2022">
+      </div>
+      <div class="selected-pill" id="selectedCar">No vehicle selected</div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow dark">REPAIR & SERVICE</span><h2>Choose your services</h2><p>Select one or more services.</p></div>
+        </div>
+        <div class="service-grid large" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section container" id="parts">
+      <div class="section-head">
+        <div><span class="eyebrow dark">SPARE PARTS</span><h2>Need a spare part?</h2><p>Select the parts you need. We will confirm availability and price on WhatsApp.</p></div>
+      </div>
+      <div class="parts-filter">
+        <input id="partSearch" type="search" placeholder="🔎 Search spare parts...">
+        <select id="partCategory"><option value="all">All categories</option><option>Brake</option><option>Engine</option><option>Electrical</option><option>Suspension</option><option>AC</option><option>Other</option></select>
+      </div>
+      <div class="parts-grid" id="partsGrid"></div>
+    </section>
+
+    <section class="section location-section">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow dark">YOUR LOCATION</span><h2>Where should we come?</h2></div><span class="step">03 / 04</span></div>
+        <div class="location-options" id="locationOptions">
+          <button class="location-card active" data-location="Home">🏠<b>Home</b><small>Come to my home</small></button>
+          <button class="location-card" data-location="Office">🏢<b>Office</b><small>Come to my office</small></button>
+          <button class="location-card" data-location="Roadside / Breakdown">🚨<b>Roadside</b><small>I'm stranded</small></button>
+          <button class="location-card" data-location="Other">📍<b>Other</b><small>Another location</small></button>
+        </div>
+        <div class="form-grid">
+          <div class="field full"><label for="address">Address / Location *</label><textarea id="address" rows="3" placeholder="Enter your full service location"></textarea></div>
+          <button class="location-btn" id="locateBtn">📍 Use My Current Location</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow dark">YOUR DETAILS</span><h2>Almost there</h2><p>Enter your details and review your request.</p></div><span class="step">04 / 04</span></div>
+        <div class="form-grid">
+          <div class="field"><label for="name">Full Name *</label><input id="name" type="text" placeholder="Your name"></div>
+          <div class="field"><label for="phone">WhatsApp Number *</label><input id="phone" type="tel" placeholder="9876543210"></div>
+          <div class="field"><label for="date">Preferred Date</label><input id="date" type="date"></div>
+          <div class="field"><label for="time">Preferred Time</label><input id="time" type="time"></div>
+          <div class="field full"><label for="notes">Additional Notes</label><textarea id="notes" rows="3" placeholder="Tell us about the problem or anything else we should know"></textarea></div>
+        </div>
+
+        <div class="summary" id="summary">
+          <div class="summary-top"><div><span class="eyebrow dark">REQUEST SUMMARY</span><h3>Your service request</h3></div><button id="clearBtn" class="text-btn">Clear All</button></div>
+          <div class="summary-grid">
+            <div><small>VEHICLE</small><strong id="sumCar">Not selected</strong></div>
+            <div><small>SERVICES</small><strong id="sumServices">None selected</strong></div>
+            <div><small>SPARE PARTS</small><strong id="sumParts">None selected</strong></div>
+            <div><small>LOCATION</small><strong id="sumLocation">Home</strong></div>
+          </div>
+          <div class="summary-actions">
+            <button class="btn btn-whatsapp" id="sendWhatsApp">💬 Send Request on WhatsApp</button>
+            <p>You'll receive a pre-filled WhatsApp message with all your selections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section container" id="how">
+      <div class="section-head"><div><span class="eyebrow dark">SIMPLE PROCESS</span><h2>How it works</h2></div></div>
+      <div class="steps">
+        <div><span>01</span><b>Select your car</b><p>Choose your brand, model and year.</p></div>
+        <div><span>02</span><b>Choose service or parts</b><p>Tell us what your car needs.</p></div>
+        <div><span>03</span><b>Share your location</b><p>Tell us where the vehicle is.</p></div>
+        <div><span>04</span><b>Send on WhatsApp</b><p>We confirm availability and quote.</p></div>
+      </div>
+    </section>
+
+    <section class="emergency">
+      <div class="container emergency-inner">
+        <div><span class="eyebrow">EMERGENCY ASSISTANCE</span><h2>Car trouble? We'll come to you.</h2><p>Stranded with a car problem? Send your vehicle and location details through WhatsApp.</p></div>
+        <a href="#" class="btn btn-light" data-whatsapp>Get Emergency Help →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><a class="logo" href="#home"><span class="logo-mark">A</span><span>Auto<span>Care</span></span></a><p>Professional car repair, servicing and spare-parts assistance at your location.</p></div><div><b>Quick Links</b><a href="#services">Services</a><a href="#parts">Spare Parts</a><a href="#cars">Cars</a></div><div><b>Contact</b><a href="#" data-whatsapp>WhatsApp</a><span>Mon–Sun · 8:00 AM–8:00 PM</span></div></div><div class="copyright">© 2026 AutoCare. All rights reserved.</div></footer>
+
+  <div class="toast" id="toast"></div>
+  <a class="floating-wa" href="#" data-whatsapp aria-label="WhatsApp">◔<span>WhatsApp</span></a>
+  <script src="script.js"></script>
+</body>
+</html>
