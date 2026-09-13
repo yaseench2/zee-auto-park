@@ -283,27 +283,31 @@ function clearAll(){
   document.querySelectorAll(".location-card").forEach((x,i)=>x.classList.toggle("active",i===0));renderBrands();renderServices();renderParts();updateSummary();toast("Your selections were cleared.");
 }
 
-document.addEventListener("click",e=>{
-  const brand=e.target.closest("[data-brand]"); if(brand) selectBrand(brand.dataset.brand);
-  const service=e.target.closest("[data-service]"); if(service) toggleService(service.dataset.service);
-  const part=e.target.closest("[data-part]"); if(part) togglePart(part.dataset.part);
-  const loc=e.target.closest("[data-location]"); if(loc){state.location=loc.dataset.location;document.querySelectorAll(".location-card").forEach(x=>x.classList.toggle("active",x===loc));updateSummary();}
-  const wa=e.target.closest("[data-whatsapp]"); if(wa){e.preventDefault();if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I would like to enquire about your car repair and spare-parts service.")}`,"_blank");}
-});
-$("modelSelect").addEventListener("change",e=>{state.model=e.target.value;updateSummary();$("selectedCar").textContent=state.model?`${state.brand} ${state.model}${state.year?" · "+state.year:""}`:"Choose a model";});
-$("carYear").addEventListener("input",e=>{state.year=e.target.value;updateSummary();if(state.brand&&state.model)$("selectedCar").textContent=`${state.brand} ${state.model}${state.year?" · "+state.year:""}`;});
-$("partSearch").addEventListener("input",renderParts);$("partCategory").addEventListener("change",renderParts);
-$("sendWhatsApp").addEventListener("click",sendWhatsApp);$("clearBtn").addEventListener("click",clearAll);
-$("menuBtn").addEventListener("click",()=> $("mobileNav").classList.toggle("open"));
-document.querySelectorAll("#mobileNav a").forEach(a=>a.addEventListener("click",()=> $("mobileNav").classList.remove("open")));
-$("locateBtn").addEventListener("click",()=>{
-  if(!navigator.geolocation){toast("Location is not supported by this browser.");return;}
-  toast("Getting your location...");
-  navigator.geolocation.getCurrentPosition(pos=>{
-    state.coordinates={lat:pos.coords.latitude,lng:pos.coords.longitude};
-    $("address").value=`Current location (GPS): ${pos.coords.latitude.toFixed(6)}, ${pos.coords.longitude.toFixed(6)}`;
-    toast("Location added to your request.");
-  },()=>toast("Could not get your location. Please enter it manually."));
-});
+function init(){
+  document.addEventListener("click",e=>{
+    const brand=e.target.closest("[data-brand]"); if(brand) selectBrand(brand.dataset.brand);
+    const service=e.target.closest("[data-service]"); if(service) toggleService(service.dataset.service);
+    const part=e.target.closest("[data-part]"); if(part) togglePart(part.dataset.part);
+    const loc=e.target.closest("[data-location]"); if(loc){state.location=loc.dataset.location;document.querySelectorAll(".location-card").forEach(x=>x.classList.toggle("active",x===loc));updateSummary();}
+    const wa=e.target.closest("[data-whatsapp]"); if(wa){e.preventDefault();if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I would like to enquire about your car repair and spare-parts service.")}`,"_blank");}
+  });
+  $("modelSelect").addEventListener("change",e=>{state.model=e.target.value;updateSummary();$("selectedCar").textContent=state.model?`${state.brand} ${state.model}${state.year?" · "+state.year:""}`:"Choose a model";});
+  $("carYear").addEventListener("input",e=>{state.year=e.target.value;updateSummary();if(state.brand&&state.model)$("selectedCar").textContent=`${state.brand} ${state.model}${state.year?" · "+state.year:""}`;});
+  $("partSearch").addEventListener("input",renderParts);$("partCategory").addEventListener("change",renderParts);
+  $("sendWhatsApp").addEventListener("click",sendWhatsApp);$("clearBtn").addEventListener("click",clearAll);
+  $("menuBtn").addEventListener("click",()=> $("mobileNav").classList.toggle("open"));
+  document.querySelectorAll("#mobileNav a").forEach(a=>a.addEventListener("click",()=> $("mobileNav").classList.remove("open")));
+  $("locateBtn").addEventListener("click",()=>{
+    if(!navigator.geolocation){toast("Location is not supported by this browser.");return;}
+    toast("Getting your location...");
+    navigator.geolocation.getCurrentPosition(pos=>{
+      state.coordinates={lat:pos.coords.latitude,lng:pos.coords.longitude};
+      $("address").value=`Current location (GPS): ${pos.coords.latitude.toFixed(6)}, ${pos.coords.longitude.toFixed(6)}`;
+      toast("Location added to your request.");
+    },()=>toast("Could not get your location. Please enter it manually."));
+  });
 
-renderBrands();renderServices();renderParts();updateSummary();
+  renderBrands();renderServices();renderParts();updateSummary();
+}
+
+document.addEventListener("DOMContentLoaded", init);
