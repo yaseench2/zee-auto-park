@@ -41,6 +41,127 @@ const services = [
 ];
 
 const parts = [
+  // ==========================================
+  // Car Accessories (114 Items)
+  // ==========================================
+  ["car-body-cover","Car Body Cover","Car Exterior Accessories","All-weather waterproof UV protective full car body cover","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
+  ["sun-shade","Sun Shade","Car Exterior Accessories","Reflective foldable heat-blocking windshield sun shade","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
+  ["door-visor","Door Visor","Car Exterior Accessories","Aerodynamic rain guard door visors set","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80"],
+  ["door-edge-guard","Door Edge Guard","Car Exterior Accessories","Anti-scratch silicone car door edge protectors","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80"],
+  ["door-handle-cover","Door Handle Cover","Car Exterior Accessories","Stylized chrome / carbon finish door handle protector cup","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80"],
+  ["side-mirror-cover","Side Mirror Cover","Car Exterior Accessories","Aerodynamic side rear view mirror replacement cover","https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80"],
+  ["side-mirror-rain-guard","Side Mirror Rain Guard","Car Exterior Accessories","Flexible eyebrow rain shield for side mirrors","https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80"],
+  ["mud-flap","Mud Flap","Car Exterior Accessories","Heavy-duty splash guards mud flaps for wheels","https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80"],
+  ["number-plate-frame","Number Plate Frame","Car Exterior Accessories","Sleek anti-vibration license number plate frame","https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80"],
+  ["number-plate-cover","Number Plate Cover","Car Exterior Accessories","Crystal clear protective number plate shield","https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80"],
+  ["bumper-guard","Bumper Guard","Car Exterior Accessories","Front and rear heavy-duty bumper protection guard","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=700&q=80"],
+  ["bumper-corner-guard","Bumper Corner Guard","Car Exterior Accessories","Anti-scratch rubber bumper corner protector strips","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=700&q=80"],
+  ["body-side-moulding","Body Side Moulding","Car Exterior Accessories","Impact absorbing side door protective moulding beading","https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80"],
+  ["fender-flare","Fender Flare","Car Exterior Accessories","Wide wheel arch fender flare kit","https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80"],
+  ["roof-rail","Roof Rail","Car Exterior Accessories","Heavy-duty aluminum alloy luggage roof rails","https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80"],
+  ["roof-rack","Roof Rack","Car Exterior Accessories","Aerodynamic cargo carrier luggage roof rack basket","https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80"],
+  ["spoiler","Spoiler","Car Exterior Accessories","Sport aerodynamic rear trunk boot spoiler wing","https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80"],
+  ["shark-fin-antenna","Shark Fin Antenna","Car Exterior Accessories","FM/AM signal receiver aerodynamic roof shark fin","https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80"],
+  ["car-decals-stickers","Car Decals / Stickers","Car Exterior Accessories","Premium vinyl exterior car body graphics and racing stripes","https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80"],
+  ["reflective-tape","Reflective Tape","Car Exterior Accessories","High-visibility nighttime safety reflective warning tape","https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80"],
+  ["car-seat-cover","Car Seat Cover","Interior Accessories","Premium breathable leatherette full car seat cover set","https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80"],
+  ["steering-wheel-cover","Steering Wheel Cover","Interior Accessories","Anti-slip breathable leather stitched steering wheel grip","https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=700&q=80"],
+  ["dashboard-mat","Dashboard Mat","Interior Accessories","Non-slip anti-glare sun protection dashboard mat","https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80"],
+  ["dashboard-cover","Dashboard Cover","Interior Accessories","Custom-fit protective dashboard cover pad","https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80"],
+  ["floor-mat","Floor Mat","Interior Accessories","All-weather heavy-duty waterproof car floor mats","https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=700&q=80"],
+  ["3d-5d-7d-floor-mat","3D / 5D / 7D Floor Mat","Interior Accessories","Luxury custom-tailored 7D deep-dish waterproof floor mats","https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=700&q=80"],
+  ["boot-mat","Boot Mat","Interior Accessories","All-weather trunk boot liner cargo protection tray","https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=700&q=80"],
+  ["gear-knob-cover","Gear Knob Cover","Interior Accessories","Ergonomic leather stitched gear shift knob sleeve","https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80"],
+  ["hand-brake-cover","Hand Brake Cover","Interior Accessories","Textured non-slip emergency brake protective grip","https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80"],
+  ["seat-belt-cover","Seat Belt Cover","Interior Accessories","Soft shoulder comfort cushion seat belt padding","https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=700&q=80"],
+  ["neck-rest-pillow","Neck Rest Pillow","Interior Accessories","Memory foam ergonomic head & neck rest cushion","https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=700&q=80"],
+  ["headrest-pillow","Headrest Pillow","Interior Accessories","Contoured breathable driving headrest comfort pillow","https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=700&q=80"],
+  ["lumbar-support-cushion","Lumbar Support Cushion","Interior Accessories","Orthopedic memory foam lower back support car cushion","https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=700&q=80"],
+  ["armrest-cover","Armrest Cover","Interior Accessories","Cushioned leather center console armrest protective pad","https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=700&q=80"],
+  ["sun-visor-organizer","Sun Visor Organizer","Interior Accessories","Multi-pocket card, document and sunglasses visor pouch","https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=700&q=80"],
+  ["car-tissue-box","Car Tissue Box","Interior Accessories","Sleek sun visor & seatback leather tissue dispenser","https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=700&q=80"],
+  ["car-trash-bin","Car Trash Bin","Interior Accessories","Compact leak-proof hanging automotive garbage container","https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80"],
+  ["cup-holder","Cup Holder","Interior Accessories","Expandable dual-slot console car cup holder organizer","https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=700&q=80"],
+  ["seat-gap-filler","Seat Gap Filler","Interior Accessories","Drop-catch leather pocket organizer for car seat gaps","https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=700&q=80"],
+  ["car-coat-hanger","Car Coat Hanger","Interior Accessories","Headrest back seat stainless steel suit and coat hanger","https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80"],
+  ["back-seat-organizer","Back Seat Organizer","Interior Accessories","Multi-pocket seatback storage bag with bottle & tablet holder","https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80"],
+  ["car-document-holder","Car Document Holder","Interior Accessories","Premium leather wallet organizer for RC, insurance & papers","https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=700&q=80"],
+  ["mobile-holder","Mobile Holder","Mobile & Electronics","Universal 360-degree rotation car smartphone holder","https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=700&q=80"],
+  ["dashboard-mobile-holder","Dashboard Mobile Holder","Mobile & Electronics","Heavy-duty suction cup dashboard phone mount","https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=700&q=80"],
+  ["air-vent-mobile-holder","Air Vent Mobile Holder","Mobile & Electronics","Anti-shake air vent clip smartphone car holder","https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=700&q=80"],
+  ["magnetic-mobile-holder","Magnetic Mobile Holder","Mobile & Electronics","Ultra-strong neodymium magnetic dashboard phone mount","https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=700&q=80"],
+  ["wireless-charging-holder","Wireless Charging Holder","Mobile & Electronics","Qi fast wireless charging auto-clamping phone car mount","https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=700&q=80"],
+  ["car-charger","Car Charger","Mobile & Electronics","Fast dual-port 12V cigarette lighter car charger","https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=700&q=80"],
+  ["usb-charger","USB Charger","Mobile & Electronics","QC 3.0 & PD 30W high-speed dual USB car charger adapter","https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=700&q=80"],
+  ["usb-cable","USB Cable","Mobile & Electronics","Durable nylon braided 3-in-1 fast charging car USB cable","https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=700&q=80"],
+  ["bluetooth-fm-transmitter","Bluetooth FM Transmitter","Mobile & Electronics","Wireless Bluetooth FM radio transmitter with handsfree calling","https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=700&q=80"],
+  ["bluetooth-adapter","Bluetooth Adapter","Mobile & Electronics","Aux 3.5mm wireless Bluetooth audio receiver adapter","https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=700&q=80"],
+  ["car-stereo","Car Stereo","Mobile & Electronics","Single & Double DIN Bluetooth automotive audio receiver","https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=700&q=80"],
+  ["android-car-player","Android Car Player","Mobile & Electronics","Smart Android touchscreen media player with GPS & WiFi","https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"],
+  ["touchscreen-display","Touchscreen Display","Mobile & Electronics","HD IPS wireless Apple CarPlay & Android Auto display","https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"],
+  ["reverse-camera","Reverse Camera","Mobile & Electronics","Wide-angle HD night vision waterproof rear backup camera","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
+  ["360-camera","360° Camera","Mobile & Electronics","Full 360-degree bird's-eye surround view camera system","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
+  ["parking-sensor","Parking Sensor","Mobile & Electronics","Ultrasonic reverse parking radar sensors with LED display","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
+  ["dash-camera","Dash Camera","Mobile & Electronics","Dual front and cabin HD 4K loop recording dashboard camera","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
+  ["gps-tracker","GPS Tracker","Mobile & Electronics","Real-time anti-theft GPS vehicle tracking locator with app","https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80"],
+  ["led-headlight","LED Headlight","Lighting Accessories","High-power CSP chip automotive LED headlight bulb kit","https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=700&q=80"],
+  ["led-fog-light","LED Fog Light","Lighting Accessories","Waterproof high-penetration all-weather LED fog lamps","https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=700&q=80"],
+  ["led-bulb","LED Bulb","Lighting Accessories","Super bright H4 / H7 / H11 automotive LED replacement bulbs","https://images.unsplash.com/photo-1543465077-db45d34b88a5?auto=format&fit=crop&w=700&q=80"],
+  ["interior-led-light","Interior LED Light","Lighting Accessories","Pure white roof dome interior LED cabin light panels","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80"],
+  ["ambient-light","Ambient Light","Lighting Accessories","Smart app-controlled RGB optical fiber ambient cabin lighting","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80"],
+  ["footwell-light","Footwell Light","Lighting Accessories","Sound-activated multi-color LED under-dash footwell strips","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80"],
+  ["door-warning-light","Door Warning Light","Lighting Accessories","Anti-collision strobe safety door puddle warning lights","https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=700&q=80"],
+  ["reading-light","Reading Light","Lighting Accessories","Touch-switch soft warm LED interior cabin reading lamp","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80"],
+  ["led-strip","LED Strip","Lighting Accessories","Flexible waterproof silicone exterior and interior LED light strip","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80"],
+  ["number-plate-led","Number Plate LED","Lighting Accessories","Ultra-bright white LED license number plate illuminators","https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80"],
+  ["reverse-light","Reverse Light","Lighting Accessories","High-output super white LED backup reverse lamp bulbs","https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=80"],
+  ["brake-light","Brake Light","Lighting Accessories","Instant-trigger high-mount bright red LED brake light","https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=80"],
+  ["sequential-indicator","Sequential Indicator","Lighting Accessories","Dynamic sweeping amber sequential LED turn signals","https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=700&q=80"],
+  ["drl-daytime-running-light","DRL — Daytime Running Light","Lighting Accessories","Ultra-bright dual-mode daytime running LED tube lights","https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=700&q=80"],
+  ["wheel-cover","Wheel Cover","Wheels & Tyre Accessories","Impact-resistant snap-on sport wheel rim hubcaps","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["alloy-wheel","Alloy Wheel","Wheels & Tyre Accessories","Precision-engineered lightweight aluminum alloy wheels","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["wheel-spacers","Wheel Spacers","Wheels & Tyre Accessories","Forged aluminum hub-centric wheel spacers kit","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"],
+  ["wheel-lock-nuts","Wheel Lock Nuts","Wheels & Tyre Accessories","Anti-theft wheel lock lug nuts with proprietary key","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"],
+  ["tyre-valve-caps","Tyre Valve Caps","Wheels & Tyre Accessories","Anodized metal airtight tyre valve stem dust caps","https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=700&q=80"],
+  ["tyre-inflator","Tyre Inflator","Wheels & Tyre Accessories","Digital preset automatic 12V portable tyre air pump","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["tyre-pressure-gauge","Tyre Pressure Gauge","Wheels & Tyre Accessories","Precision digital tyre pressure measuring gauge with display","https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=700&q=80"],
+  ["tpms","TPMS","Wheels & Tyre Accessories","Solar-powered wireless tyre pressure monitoring system","https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80"],
+  ["tyre-repair-kit","Tyre Repair Kit","Wheels & Tyre Accessories","Complete heavy-duty tubeless tyre plug and puncture kit","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["puncture-repair-kit","Puncture Repair Kit","Wheels & Tyre Accessories","Emergency puncture strip repair kit with rasp and split-eye needle","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["wheel-cleaning-brush","Wheel Cleaning Brush","Wheels & Tyre Accessories","Non-scratch soft bristle alloy rim and wheel cleaning brush","https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=700&q=80"],
+  ["microfiber-cloth","Microfiber Cloth","Car Cleaning Accessories","Ultra-thick 800 GSM plush lint-free microfiber cleaning towels","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=700&q=80"],
+  ["car-wash-sponge","Car Wash Sponge","Car Cleaning Accessories","High-density porous honeycomb car washing sponge","https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=700&q=80"],
+  ["car-wash-mitt","Car Wash Mitt","Car Cleaning Accessories","Scratch-free chenille microfiber car wash glove mitt","https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=700&q=80"],
+  ["detailing-brush","Detailing Brush","Car Cleaning Accessories","Multi-size soft boar-hair automotive detailing brushes set","https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=700&q=80"],
+  ["dashboard-cleaner","Dashboard Cleaner","Car Cleaning Accessories","UV-protectant non-greasy dashboard & vinyl cleaner spray","https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=700&q=80"],
+  ["glass-cleaner","Glass Cleaner","Car Cleaning Accessories","Streak-free automotive windshield and window glass cleaner","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=700&q=80"],
+  ["tyre-cleaner","Tyre Cleaner","Car Cleaning Accessories","Deep cleaning wheel sidewall & brake dust degreaser spray","https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=700&q=80"],
+  ["tyre-polish","Tyre Polish","Car Cleaning Accessories","Long-lasting deep black wet-look tyre shine dressing","https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=700&q=80"],
+  ["car-wax","Car Wax","Car Cleaning Accessories","Premium carnauba gloss paste wax for maximum paint protection","https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=700&q=80"],
+  ["car-polish","Car Polish","Car Cleaning Accessories","Swirl and micro-scratch remover car paint polish compound","https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=700&q=80"],
+  ["interior-cleaner","Interior Cleaner","Car Cleaning Accessories","All-purpose fabric, upholstery and interior plastic cleaner","https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=700&q=80"],
+  ["leather-cleaner","Leather Cleaner","Car Cleaning Accessories","pH-balanced leather seat cleaner and conditioning cream","https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80"],
+  ["air-freshener","Air Freshener","Car Cleaning Accessories","Long-lasting luxury car perfume diffuser & odor eliminator","https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80"],
+  ["vacuum-cleaner","Vacuum Cleaner","Car Cleaning Accessories","High-power handheld 12V portable car vacuum with attachments","https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=700&q=80"],
+  ["pressure-washer","Pressure Washer","Car Cleaning Accessories","High-pressure portable electric car wash sprayer","https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=700&q=80"],
+  ["car-jump-starter","Car Jump Starter","Emergency / Utility Accessories","Portable 12V lithium vehicle jump starter and power bank","https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=700&q=80"],
+  ["jumper-cable","Jumper Cable","Emergency / Utility Accessories","Heavy-gauge pure copper battery booster jumper cables","https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=700&q=80"],
+  ["emergency-hammer","Emergency Hammer","Emergency / Utility Accessories","Window glass punch breaker and seatbelt cutter escape tool","https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=700&q=80"],
+  ["safety-triangle","Safety Triangle","Emergency / Utility Accessories","Foldable reflective roadside emergency breakdown warning triangle","https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80"],
+  ["first-aid-kit","First Aid Kit","Emergency / Utility Accessories","Emergency automotive medical first aid kit in compact pouch","https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=700&q=80"],
+  ["fire-extinguisher","Fire Extinguisher","Emergency / Utility Accessories","Compact vehicle ABC dry powder emergency fire extinguisher","https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=700&q=80"],
+  ["tow-rope","Tow Rope","Emergency / Utility Accessories","Heavy-duty 5-ton nylon car recovery tow rope with forged steel hooks","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["towing-strap","Towing Strap","Emergency / Utility Accessories","Reinforced off-road recovery tow strap with bow shackles","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["portable-air-compressor","Portable Air Compressor","Emergency / Utility Accessories","Dual cylinder metal portable 12V tyre air compressor","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["emergency-flashlight","Emergency Flashlight","Emergency / Utility Accessories","Rechargeable magnetic high-beam LED emergency work light","https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=700&q=80"],
+  ["tool-kit","Tool Kit","Emergency / Utility Accessories","Comprehensive automotive socket wrench & mechanical hand tool set","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["jack","Jack","Emergency / Utility Accessories","Heavy-duty hydraulic floor trolley & scissor car lifting jack","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["wheel-spanner","Wheel Spanner","Emergency / Utility Accessories","Telescopic extendable high-torque wheel lug nut spanner wrench","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["battery-tester","Battery Tester","Emergency / Utility Accessories","Digital 12V car battery condition and alternator load analyzer","https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=700&q=80"],
+
+  // ==========================================
+  // Mechanical & Engine Parts
+  // ==========================================
   ["engine-block","Engine Block","Engine","Main engine block assembly","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
   ["cylinder-head","Cylinder Head","Engine","Cylinder head assembly","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
   ["cylinder","Cylinder","Engine","Engine cylinder component","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
@@ -174,6 +295,15 @@ const parts = [
 
 const state = {brand:"", model:"", year:"", services:new Set(), parts:new Set(), location:"Home", coordinates:null};
 const partCategoryIcons = {
+  // Car Accessories
+  "Car Exterior Accessories": "🚗",
+  "Interior Accessories": "🛋️",
+  "Mobile & Electronics": "📱",
+  "Lighting Accessories": "💡",
+  "Wheels & Tyre Accessories": "🛞",
+  "Car Cleaning Accessories": "🧼",
+  "Emergency / Utility Accessories": "🔧",
+  // Mechanical & Engine Parts
   "Engine": "⚙️",
   "Fuel System": "⛽",
   "Air / Intake System": "🌬️",
@@ -245,8 +375,8 @@ function renderParts(){
   const q=$("partSearch").value.trim().toLowerCase();
   const cat=$("partCategory").value;
 
-  if (!q && (cat === "all" || cat === "none")) {
-    $("partsGrid").innerHTML = `<p>Search for a part or choose a category to view available spare parts.</p>`;
+  if (!q && cat === "none") {
+    $("partsGrid").innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: #747a80;">Search for a part or accessory, or choose a category to view available items.</p>`;
     return;
   }
 
@@ -260,7 +390,7 @@ function renderParts(){
   $("partsGrid").innerHTML=filtered.map(p=>`<article class="part-card ${state.parts.has(p[0])?"selected":""}">
     ${getPartVisual(p)}
     <div class="part-info"><small>${p[2]}</small><b>${p[1]}</b><p>${p[3]}</p><button class="select-part" data-part="${p[0]}">${state.parts.has(p[0])?"✓ Selected":"Select Part"}</button></div>
-  </article>`).join("") || `<p>No parts found.</p>`;
+  </article>`).join("") || `<p style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: #747a80;">No spare parts or accessories found matching your search.</p>`;
 }
 function togglePart(id){state.parts.has(id)?state.parts.delete(id):state.parts.add(id);renderParts();updateSummary();}
 function selectedPartNames(){return parts.filter(p=>state.parts.has(p[0])).map(p=>p[1]);}
