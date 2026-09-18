@@ -6,26 +6,34 @@
   <meta name="description" content="Professional car repair, servicing and spare-parts assistance at your location.">
   <meta name="theme-color" content="#0b0d10">
   <title>Zee Auto Park | Car Repair & Spare Parts</title>
+  <link rel="icon" type="image/png" href="static/logo/logo.png">
+  <link rel="apple-touch-icon" href="static/logo/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header" id="home">
     <div class="container nav">
-      <a class="logo" href="#home"><span class="logo-mark">Z</span><span>Zee <span>Auto Park</span></span></a>
+      <a class="logo" href="#home">
+        <img class="logo-img" src="static/logo/logo.png" alt="Zee Auto Park Logo" width="42" height="42">
+        <span>Zee <span>Auto Park</span></span>
+      </a>
       <nav class="desktop-nav">
-        <a href="#cars">Cars</a><a href="#parts">Spare Parts</a><a href="#how">How It Works</a>
+        <a href="#cars">Cars</a><a href="#parts">Spare Parts</a><a href="#offers">Special Offers</a><a href="#how">How It Works</a>
       </nav>
       <a class="nav-wa" href="tel:+918078050269">Call Now <span>↗</span></a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="#cars">Cars</a><a href="#parts">Spare Parts</a><a href="#how">How It Works</a>
+      <a href="#cars">Cars</a><a href="#parts">Spare Parts</a><a href="#offers">Special Offers</a><a href="#how">How It Works</a>
       <a class="mobile-wa" href="tel:+918078050269">Call Now</a>
     </div>
   </header>
+  <div class="form-progress-bar-wrap" id="formProgressWrap" aria-hidden="true">
+    <div class="form-progress-bar" id="formProgressBar"></div>
+  </div>
 
   <main>
     <section class="hero">
@@ -79,6 +87,24 @@
       </div>
     </section>
 
+    <div class="container progress-container">
+      <div class="relaxing-progress-card" id="progressCard">
+        <div class="progress-card-top">
+          <div class="progress-status-info">
+            <span class="progress-pulse-dot"></span>
+            <div>
+              <span class="progress-status-title" id="progressStatusText">Request Progress: 0%</span>
+              <span class="progress-hint" id="progressHintText">Select your vehicle & requirements to begin</span>
+            </div>
+          </div>
+          <div class="progress-percentage" id="progressPercentBadge">0% Completed</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFillBar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
     <section class="section container" id="cars">
       <div class="section-head">
         <div><span class="eyebrow dark">YOUR VEHICLE</span><h2>Select your car</h2><p>Choose a brand and model so we can understand your vehicle.</p></div>
@@ -106,21 +132,39 @@
       <div class="section-head">
         <div><span class="eyebrow dark">SPARE PARTS & ACCESSORIES</span><h2>Need a spare part or accessory?</h2><p>Select the parts and accessories you need. We will confirm availability and price on WhatsApp.</p></div>
       </div>
+      <div class="category-pills-wrap">
+        <div class="category-pills" id="categoryPills">
+          <button type="button" class="cat-pill" data-cat="all">✨ All Items</button>
+          <button type="button" class="cat-pill" data-cat="Brake Parts">🛑 Brake Parts</button>
+          <button type="button" class="cat-pill" data-cat="Steering & Power Steering">🕹️ Steering & Power Steering</button>
+          <button type="button" class="cat-pill" data-cat="Engine">⚙️ Engine</button>
+          <button type="button" class="cat-pill" data-cat="Fuel System">⛽ Fuel System</button>
+          <button type="button" class="cat-pill" data-cat="Air / Intake System">🌬️ Air / Intake</button>
+          <button type="button" class="cat-pill" data-cat="Ignition System">🔥 Ignition</button>
+          <button type="button" class="cat-pill" data-cat="Exhaust System">💨 Exhaust</button>
+          <button type="button" class="cat-pill" data-cat="Cooling System">❄️ Cooling</button>
+          <button type="button" class="cat-pill" data-cat="Lubrication / Engine Oil System">🛢️ Oil System</button>
+          <button type="button" class="cat-pill" data-cat="Engine Sensors">📡 Sensors</button>
+          <button type="button" class="cat-pill" data-cat="Engine Electrical Parts">🔋 Electrical</button>
+          <button type="button" class="cat-pill" data-cat="Diesel Engine">🛠️ Diesel</button>
+          <button type="button" class="cat-pill" data-cat="Suspension">🛞 Suspension</button>
+          <button type="button" class="cat-pill" data-cat="Car Exterior Accessories">🚗 Exterior Accessories</button>
+          <button type="button" class="cat-pill" data-cat="Interior Accessories">🛋️ Interior Accessories</button>
+          <button type="button" class="cat-pill" data-cat="Mobile & Electronics">📱 Mobile & Electronics</button>
+          <button type="button" class="cat-pill" data-cat="Lighting Accessories">💡 Lighting</button>
+          <button type="button" class="cat-pill" data-cat="Wheels & Tyre Accessories">🛞 Wheels & Tyres</button>
+          <button type="button" class="cat-pill" data-cat="Car Cleaning Accessories">🧼 Car Cleaning</button>
+          <button type="button" class="cat-pill" data-cat="Emergency / Utility Accessories">🔧 Emergency Kit</button>
+        </div>
+      </div>
       <div class="parts-filter">
-        <input id="partSearch" type="search" placeholder="🔎 Search spare parts & accessories...">
+        <input id="partSearch" type="search" placeholder="🔎 Search spare parts & accessories (e.g. Brake pad, Steering rack, Filter)...">
         <select id="partCategory">
           <option value="none">Select category</option>
           <option value="all">All categories</option>
-          <optgroup label="Car Accessories">
-            <option>Car Exterior Accessories</option>
-            <option>Interior Accessories</option>
-            <option>Mobile & Electronics</option>
-            <option>Lighting Accessories</option>
-            <option>Wheels & Tyre Accessories</option>
-            <option>Car Cleaning Accessories</option>
-            <option>Emergency / Utility Accessories</option>
-          </optgroup>
-          <optgroup label="Engine & Mechanical Parts">
+          <optgroup label="Mechanical & Engine Parts">
+            <option>Brake Parts</option>
+            <option>Steering & Power Steering</option>
             <option>Engine</option>
             <option>Fuel System</option>
             <option>Air / Intake System</option>
@@ -132,67 +176,378 @@
             <option>Engine Electrical Parts</option>
             <option>Belts & External Engine Parts</option>
             <option>Diesel Engine</option>
-            <option>Brake</option>
             <option>Suspension</option>
             <option>AC</option>
             <option>Other</option>
+          </optgroup>
+          <optgroup label="Car Accessories">
+            <option>Car Exterior Accessories</option>
+            <option>Interior Accessories</option>
+            <option>Mobile & Electronics</option>
+            <option>Lighting Accessories</option>
+            <option>Wheels & Tyre Accessories</option>
+            <option>Car Cleaning Accessories</option>
+            <option>Emergency / Utility Accessories</option>
           </optgroup>
         </select>
       </div>
       <div class="parts-grid" id="partsGrid"></div>
     </section>
 
-    <section class="section location-section">
+    <!-- ==================================================== -->
+    <!-- Triple Spare Parts Advertisement & Special Offers Section -->
+    <!-- ==================================================== -->
+    <section class="section deals-section" id="offers">
       <div class="container">
-        <div class="section-head"><div><span class="eyebrow dark">YOUR LOCATION</span><h2>Where should we come?</h2></div><span class="step">03 / 05</span></div>
-        <div class="location-options" id="locationOptions">
-          <button class="location-card active" data-location="Home">🏠<b>Home</b><small>Come to my home</small></button>
-          <button class="location-card" data-location="Office">🏢<b>Office</b><small>Come to my office</small></button>
-          <button class="location-card" data-location="Roadside / Breakdown">🚨<b>Roadside</b><small>I'm stranded</small></button>
-          <button class="location-card" data-location="Other">📍<b>Other</b><small>Another location</small></button>
+        <div class="deals-header">
+          <div class="deals-badge-pill">🔥 SPECIAL OFFERS · LIMITED DEALS</div>
+          <h2 class="deals-heading">Special Deals on Genuine Spares</h2>
         </div>
-        <div class="form-grid">
-          <div class="field full"><label for="address">Address / Location *</label><textarea id="address" rows="3" placeholder="Enter your full service location"></textarea></div>
-          <button class="location-btn" id="locateBtn">📍 Use My Current Location</button>
+
+        <div class="deals-grid">
+          <!-- Deal Card 1: Turbocharger Assembly -->
+          <article class="deal-card">
+            <div class="deal-top-bar">
+              <span class="deal-tag hot">30% OFF</span>
+              <span class="deal-stock-badge">⚡ Limited Deal</span>
+            </div>
+            <div class="deal-image-wrap">
+              <img src="static/images/ew/Turbocharger.jpeg" alt="Turbocharger Assembly" class="deal-image" loading="lazy">
+            </div>
+            <div class="deal-details">
+              <h3 class="deal-title">Turbocharger Assembly</h3>
+              <div class="deal-pricing">
+                <div class="deal-pricing-numbers">
+                  <div class="deal-mrp"><s>₹24,500</s></div>
+                  <div class="deal-current-price">
+                    <span class="curr">₹</span><span class="amt">16,999</span>
+                  </div>
+                </div>
+                <div class="deal-savings">
+                  <span class="deal-cash">Save ₹7,501</span>
+                </div>
+              </div>
+
+              <button type="button" class="deal-wa-btn" data-deal-part="Turbocharger Assembly" data-deal-price="₹16,999" data-deal-mrp="₹24,500" data-deal-discount="30% OFF (Save ₹7,501)">
+                <span>Claim Deal</span>
+                <span class="wa-ico">💬</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Deal Card 2: Complete Cylinder Head Assembly -->
+          <article class="deal-card">
+            <div class="deal-top-bar">
+              <span class="deal-tag popular">31% OFF</span>
+              <span class="deal-stock-badge in-stock">✓ Ready Stock</span>
+            </div>
+            <div class="deal-image-wrap">
+              <img src="static/images/ew/Cylinder Head.jpeg" alt="Cylinder Head Assembly" class="deal-image" loading="lazy">
+            </div>
+            <div class="deal-details">
+              <h3 class="deal-title">Cylinder Head Assembly</h3>
+              <div class="deal-pricing">
+                <div class="deal-pricing-numbers">
+                  <div class="deal-mrp"><s>₹18,000</s></div>
+                  <div class="deal-current-price">
+                    <span class="curr">₹</span><span class="amt">12,499</span>
+                  </div>
+                </div>
+                <div class="deal-savings">
+                  <span class="deal-cash">Save ₹5,501</span>
+                </div>
+              </div>
+
+              <button type="button" class="deal-wa-btn" data-deal-part="Cylinder Head Assembly" data-deal-price="₹12,499" data-deal-mrp="₹18,000" data-deal-discount="31% OFF (Save ₹5,501)">
+                <span>Claim Deal</span>
+                <span class="wa-ico">💬</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Deal Card 3: Heavy-Duty Engine Timing Chain Kit -->
+          <article class="deal-card">
+            <div class="deal-top-bar">
+              <span class="deal-tag value">33% OFF</span>
+              <span class="deal-stock-badge">⚡ Special Price</span>
+            </div>
+            <div class="deal-image-wrap">
+              <img src="static/images/ew/Timing Chain.jpeg" alt="Timing Chain Overhaul Kit" class="deal-image" loading="lazy">
+            </div>
+            <div class="deal-details">
+              <h3 class="deal-title">Timing Chain Overhaul Kit</h3>
+              <div class="deal-pricing">
+                <div class="deal-pricing-numbers">
+                  <div class="deal-mrp"><s>₹8,200</s></div>
+                  <div class="deal-current-price">
+                    <span class="curr">₹</span><span class="amt">5,499</span>
+                  </div>
+                </div>
+                <div class="deal-savings">
+                  <span class="deal-cash">Save ₹2,701</span>
+                </div>
+              </div>
+
+              <button type="button" class="deal-wa-btn" data-deal-part="Timing Chain Overhaul Kit" data-deal-price="₹5,499" data-deal-mrp="₹8,200" data-deal-discount="33% OFF (Save ₹2,701)">
+                <span>Claim Deal</span>
+                <span class="wa-ico">💬</span>
+              </button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section alt">
+    <section class="section location-section" id="location">
       <div class="container">
-        <div class="section-head"><div><span class="eyebrow dark">YOUR DETAILS</span><h2>Almost there</h2><p>Enter your details and review your request.</p></div><span class="step">04 / 05</span></div>
-        <div class="form-grid">
-          <div class="field"><label for="name">Full Name *</label><input id="name" type="text" placeholder="Your name"></div>
-          <div class="field"><label for="phone">WhatsApp Number *</label><input id="phone" type="tel" placeholder="e.g. +1 555 123 4567 or 9876543210"></div>
-          <div class="field"><label for="date">Preferred Date</label><input id="date" type="date"></div>
-          <div class="field"><label for="time">Preferred Time</label><input id="time" type="time"></div>
-          <div class="field full"><label for="notes">Additional Notes</label><textarea id="notes" rows="3" placeholder="Tell us about the problem or anything else we should know"></textarea></div>
+        <div class="section-head">
+          <div><span class="eyebrow dark">YOUR LOCATION</span><h2>Where should we come?</h2><p>Choose your location type and provide your address or auto-detect with GPS.</p></div>
+          <span class="step">03 / 05</span>
+        </div>
+        <div class="location-options" id="locationOptions">
+          <button type="button" class="location-card active" data-location="Home">
+            <div class="location-card-top">
+              <span class="location-icon">🏠</span>
+              <span class="loc-check">✓</span>
+            </div>
+            <b>Home</b>
+            <small>At your doorstep / residential parking</small>
+          </button>
+          <button type="button" class="location-card" data-location="Office">
+            <div class="location-card-top">
+              <span class="location-icon">🏢</span>
+              <span class="loc-check">✓</span>
+            </div>
+            <b>Office</b>
+            <small>Workplace parking / office complex</small>
+          </button>
+          <button type="button" class="location-card" data-location="Roadside / Breakdown">
+            <div class="location-card-top">
+              <span class="location-icon">🚨</span>
+              <span class="loc-check">✓</span>
+            </div>
+            <b>Roadside</b>
+            <small>Emergency breakdown on the road</small>
+          </button>
+          <button type="button" class="location-card" data-location="Other">
+            <div class="location-card-top">
+              <span class="location-icon">📍</span>
+              <span class="loc-check">✓</span>
+            </div>
+            <b>Other</b>
+            <small>Custom service spot or parking lot</small>
+          </button>
+        </div>
+
+        <div class="address-card">
+          <div class="address-card-header">
+            <label for="address"><b>Service Address / Landmark *</b></label>
+            <button type="button" class="location-btn" id="locateBtn">📍 Auto-Detect Location (GPS)</button>
+          </div>
+          <textarea id="address" rows="3" placeholder="Enter building, street, area, landmark, or let GPS fill your exact spot..."></textarea>
+          <small class="field-hint">Our mobile mechanic will navigate directly to this address or GPS pin.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="details">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow dark">YOUR DETAILS</span><h2>Complete your service request</h2><p>Provide contact information and timing. Each section is designed for quick, hassle-free booking.</p></div>
+          <span class="step">04 / 05</span>
+        </div>
+
+        <div class="fill-cards-grid">
+          <!-- Card 1: Contact Information -->
+          <div class="fill-card">
+            <div class="fill-card-head">
+              <div class="fill-card-icon">👤</div>
+              <div>
+                <h3>Contact Details</h3>
+                <p>We'll message quotation & mechanic ETA</p>
+              </div>
+            </div>
+            <div class="fill-card-body">
+              <div class="input-card-field">
+                <label for="name"><span class="label-icon">✍️</span> Full Name <span class="req">*</span></label>
+                <input id="name" type="text" placeholder="e.g. Rahul Sharma" autocomplete="name">
+              </div>
+              <div class="input-card-field">
+                <label for="phone"><span class="label-icon">📱</span> WhatsApp Number <span class="req">*</span></label>
+                <div class="phone-input-wrap">
+                  <span class="phone-prefix">🇮🇳 +91</span>
+                  <input id="phone" type="tel" placeholder="98765 43210" autocomplete="tel">
+                </div>
+                <small class="field-hint">Parts availability and quote will be shared directly on this number.</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Preferred Schedule -->
+          <div class="fill-card">
+            <div class="fill-card-head">
+              <div class="fill-card-icon">🗓️</div>
+              <div>
+                <h3>Preferred Schedule</h3>
+                <p>Pick a date or select quick time slots</p>
+              </div>
+            </div>
+            <div class="fill-card-body">
+              <div class="sub-section-title">Quick Date Selection</div>
+              <div class="chip-scroll">
+                <button type="button" class="chip-btn" data-date-chip="today">⚡ Today</button>
+                <button type="button" class="chip-btn" data-date-chip="tomorrow">📅 Tomorrow</button>
+                <button type="button" class="chip-btn" data-date-chip="custom">📆 Pick Date</button>
+              </div>
+              <div class="input-card-field" style="margin-top: 10px;">
+                <label for="date"><span class="label-icon">📅</span> Service Date</label>
+                <input id="date" type="date">
+              </div>
+
+              <div class="sub-section-title" style="margin-top: 14px;">Preferred Time Window</div>
+              <div class="time-slots-grid">
+                <button type="button" class="time-slot-card" data-time-slot="09:00">
+                  <span class="slot-icon">🌅</span>
+                  <b>Morning</b>
+                  <small>8 AM – 12 PM</small>
+                </button>
+                <button type="button" class="time-slot-card" data-time-slot="13:00">
+                  <span class="slot-icon">☀️</span>
+                  <b>Afternoon</b>
+                  <small>12 PM – 4 PM</small>
+                </button>
+                <button type="button" class="time-slot-card" data-time-slot="17:00">
+                  <span class="slot-icon">🌆</span>
+                  <b>Evening</b>
+                  <small>4 PM – 8 PM</small>
+                </button>
+                <button type="button" class="time-slot-card" data-time-slot="ASAP">
+                  <span class="slot-icon">⚡</span>
+                  <b>Urgent / ASAP</b>
+                  <small>Immediate visit</small>
+                </button>
+              </div>
+              <div class="input-card-field" style="margin-top: 10px;">
+                <label for="time"><span class="label-icon">⏰</span> Specific Time <span>(optional)</span></label>
+                <input id="time" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Issue Description & Notes -->
+          <div class="fill-card full-width">
+            <div class="fill-card-head">
+              <div class="fill-card-icon">🛠️</div>
+              <div>
+                <h3>Issue Description & Problem Notes</h3>
+                <p>Tap common symptoms below to add them instantly, or write custom details</p>
+              </div>
+            </div>
+            <div class="fill-card-body">
+              <div class="sub-section-title">Common Symptoms (Tap to Add / Remove)</div>
+              <div class="symptom-chips-scroll">
+                <button type="button" class="symptom-chip" data-symptom="Car Won't Start">⚠️ Car Won't Start</button>
+                <button type="button" class="symptom-chip" data-symptom="Brake Noise / Squealing">🛑 Brake Squeal / Soft Pedal</button>
+                <button type="button" class="symptom-chip" data-symptom="Steering Stiffness / Noise">🕹️ Steering Noise / Hard Turn</button>
+                <button type="button" class="symptom-chip" data-symptom="AC Cooling Low">❄️ AC Not Cooling</button>
+                <button type="button" class="symptom-chip" data-symptom="Engine Warning Light On">⚙️ Check Engine Light</button>
+                <button type="button" class="symptom-chip" data-symptom="Battery Discharge / Jumpstart">🔋 Dead Battery / Jumpstart</button>
+                <button type="button" class="symptom-chip" data-symptom="Oil / Fluid Leakage">🛢️ Fluid / Oil Leak</button>
+                <button type="button" class="symptom-chip" data-symptom="Periodic Periodic Maintenance">🔧 General Servicing</button>
+              </div>
+              <div class="input-card-field" style="margin-top: 14px;">
+                <label for="notes"><span class="label-icon">📝</span> Additional Problem Details or Instructions</label>
+                <textarea id="notes" rows="3" placeholder="Tell us about strange noises, dash alerts, breakdown conditions, or any specific parts you want us to bring..."></textarea>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="summary" id="summary">
-          <div class="summary-top"><div><span class="eyebrow dark">REQUEST SUMMARY</span><h3>Your service request</h3></div><button id="clearBtn" class="text-btn">Clear All</button></div>
+          <div class="summary-top">
+            <div class="summary-title-row">
+              <img class="summary-logo" src="static/logo/logo.png" alt="Zee Auto Park Logo" width="44" height="44">
+              <div>
+                <span class="eyebrow dark">REQUEST SUMMARY</span>
+                <h3>Your Service Request</h3>
+                <p class="summary-subtitle">Review your vehicle, parts, and schedule before sending via WhatsApp</p>
+              </div>
+            </div>
+            <button id="clearBtn" class="text-btn" type="button">🔄 Clear All</button>
+          </div>
           <div class="summary-grid">
-            <div><small>VEHICLE</small><strong id="sumCar">Not selected</strong></div>
-            <div><small>SERVICES</small><strong id="sumService">None selected</strong></div>
-            <div><small>SPARE PARTS</small><strong id="sumParts">None selected</strong></div>
-            <div><small>LOCATION</small><strong id="sumLocation">Home</strong></div>
+            <div class="summary-item"><small>VEHICLE</small><strong id="sumCar">Not selected</strong></div>
+            <div class="summary-item"><small>SERVICES</small><strong id="sumService">None selected</strong></div>
+            <div class="summary-item"><small>SPARE PARTS</small><strong id="sumParts">None selected</strong></div>
+            <div class="summary-item"><small>LOCATION</small><strong id="sumLocation">Home</strong></div>
+            <div class="summary-item summary-item-wide"><small>PREFERRED SCHEDULE</small><strong id="sumSchedule">Flexible / As soon as possible</strong></div>
           </div>
           <div class="summary-actions">
-            <button class="btn btn-whatsapp" id="sendWhatsApp">💬 Send Request on WhatsApp</button>
-            <p>You'll receive a pre-filled WhatsApp message with all your selections.</p>
+            <button class="btn btn-whatsapp" id="sendWhatsApp" type="button">💬 Send Request on WhatsApp <span>→</span></button>
+            <p class="summary-guarantee">🔒 No prepayment required · Part verification & quotation before service</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="how section container" id="how">
-      <div class="section-head"><div><span class="eyebrow dark">SIMPLE PROCESS</span><h2>How it works</h2></div></div>
-      <div class="steps">
-        <div><span>01</span><b>Select your car</b><p>Choose your brand, model and year.</p></div>
-        <div><span>02</span><b>Choose service</b><p>Tell us what your vehicle needs.</p></div>
-        <div><span>03</span><b>Pick spare parts</b><p>Search or choose components you need.</p></div>
-        <div><span>04</span><b>Share your location</b><p>Tell us where the service is needed.</p></div>
-        <div><span>05</span><b>Send on WhatsApp</b><p>We confirm availability and quote.</p></div>
+      <div class="summary how-summary">
+        <div class="summary-top">
+          <div>
+            <span class="eyebrow dark">SIMPLE PROCESS</span>
+            <h3>How it works</h3>
+          </div>
+          <a href="#booking" class="step-cta-btn">Book a Service <span>→</span></a>
+        </div>
+        <div class="steps summary-grid steps-grid">
+          <div class="step-card step-card-1">
+            <div class="step-card-top">
+              <small>STEP 01</small>
+              <span class="step-card-icon">🚗</span>
+            </div>
+            <strong>Select your car</strong>
+            <p>Choose your brand, model, and year.</p>
+          </div>
+          <div class="step-card step-card-2">
+            <div class="step-card-top">
+              <small>STEP 02</small>
+              <span class="step-card-icon">🔧</span>
+            </div>
+            <strong>Choose service</strong>
+            <p>Tell us what your vehicle needs.</p>
+          </div>
+          <div class="step-card step-card-3">
+            <div class="step-card-top">
+              <small>STEP 03</small>
+              <span class="step-card-icon">⚙️</span>
+            </div>
+            <strong>Pick spare parts</strong>
+            <p>Search or select components.</p>
+          </div>
+          <div class="step-card step-card-4">
+            <div class="step-card-top">
+              <small>STEP 04</small>
+              <span class="step-card-icon">📍</span>
+            </div>
+            <strong>Share location</strong>
+            <p>Tell us where the service happens.</p>
+          </div>
+          <div class="step-card step-card-5">
+            <div class="step-card-top">
+              <small>STEP 05</small>
+              <span class="step-card-icon">💬</span>
+            </div>
+            <strong>Send on WhatsApp</strong>
+            <p>We confirm availability and quote.</p>
+          </div>
+        </div>
+        <div class="summary-actions steps-actions">
+          <div class="steps-trust-badges">
+            <span>✓ Fast On-Site Service</span>
+            <span>✓ Genuine Spare Parts</span>
+            <span>✓ Transparent Pricing</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -204,7 +559,7 @@
     </section>
   </main>
 
-  <footer><div class="container footer-inner"><div><a class="logo" href="#home"><span class="logo-mark">Z</span><span>Zee <span>Auto Park</span></span></a><p>Professional car repair, servicing and spare-parts assistance at your location.</p></div><div><b>Quick Links</b><a href="#parts">Spare Parts</a><a href="#cars">Cars</a></div><div><b>Contact</b><a href="tel:+918078050269">+91 80-78050269</a><span>Mon–Sun · 8:00 AM–8:00 PM</span></div></div><div class="copyright">© 2026 Zee Auto Park. All rights reserved.</div></footer>
+  <footer><div class="container footer-inner"><div><a class="logo" href="#home"><img class="logo-img" src="static/logo/logo.png" alt="Zee Auto Park Logo" width="42" height="42"><span>Zee <span>Auto Park</span></span></a><p>Professional car repair, servicing and spare-parts assistance at your location.</p></div><div><b>Quick Links</b><a href="#parts">Spare Parts</a><a href="#offers">Special Offers</a><a href="#cars">Cars</a></div><div><b>Contact</b><a href="tel:+918078050269">+91 80-78050269</a><span>Mon–Sun · 8:00 AM–8:00 PM</span></div></div><div class="copyright">© 2026 Zee Auto Park. All rights reserved.</div></footer>
 
   <div class="toast" id="toast"></div>
   <script src="script.js" defer></script>

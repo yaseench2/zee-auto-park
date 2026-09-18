@@ -1,9 +1,9 @@
 // =========================
 // Zee Auto Park Website Settings
 // =========================
-const WHATSAPP_NUMBER = "7034041366"; // WhatsApp number for sending request messages
-const WA_DEFAULT_COUNTRY_CODE = "91";
 const CALL_NUMBER = "918078050269";
+const WHATSAPP_NUMBER = "918078050269"; // Calling number used for WhatsApp messaging
+const WA_DEFAULT_COUNTRY_CODE = "91";
 const BUSINESS_NAME = "Zee Auto Park";
 
 // Replace these image URLs with the client's preferred images if required.
@@ -160,23 +160,23 @@ const parts = [
   ["battery-tester","Battery Tester","Emergency / Utility Accessories","Digital 12V car battery condition and alternator load analyzer","https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=700&q=80"],
 
   // ==========================================
-  // Mechanical & Engine Parts
+  // Mechanical & Engine Parts (Using static/images/ew/)
   // ==========================================
-  ["engine-block","Engine Block","Engine","Main engine block assembly","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["cylinder-head","Cylinder Head","Engine","Cylinder head assembly","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["cylinder","Cylinder","Engine","Engine cylinder component","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["combustion-chamber","Combustion Chamber","Engine","Combustion chamber component","https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=80"],
-  ["piston","Piston","Engine","Engine piston","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=700&q=80"],
-  ["piston-rings","Piston Rings","Engine","Piston ring set","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=700&q=80"],
-  ["connecting-rod","Connecting Rod","Engine","Connecting rod assembly","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=700&q=80"],
-  ["crankshaft","Crankshaft","Engine","Engine crankshaft","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["main-bearings","Main Bearings","Engine","Main bearing kit","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["connecting-rod-bearings","Connecting Rod Bearings","Engine","Con rod bearing set","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["flywheel","Flywheel","Engine","Flywheel assembly","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["flexplate","Flexplate","Engine","Flexplate for automatic transmission","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["timing-chain","Timing Chain","Engine","Timing chain kit","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["timing-belt","Timing Belt","Engine","Timing belt replacement","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["timing-gears","Timing Gears","Engine","Timing gear assembly","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
+  ["engine-block","Engine Block","Engine","Main engine block assembly","static/images/ew/Engine Block.jpeg"],
+  ["cylinder-head","Cylinder Head","Engine","Cylinder head assembly","static/images/ew/Cylinder Head.jpeg"],
+  ["cylinder","Cylinder","Engine","Engine cylinder component","static/images/ew/Cylinder.jpeg"],
+  ["combustion-chamber","Combustion Chamber","Engine","Combustion chamber component","static/images/ew/Combustion Chamber.jpeg"],
+  ["piston","Piston","Engine","Engine piston","static/images/ew/Piston.jpeg"],
+  ["piston-rings","Piston Rings","Engine","Piston ring set","static/images/ew/Piston Rings.jpeg"],
+  ["connecting-rod","Connecting Rod","Engine","Connecting rod assembly","static/images/ew/Connecting Rod.jpeg"],
+  ["crankshaft","Crankshaft","Engine","Engine crankshaft","static/images/ew/Crankshaft.jpeg"],
+  ["main-bearings","Main Bearings","Engine","Main bearing kit","static/images/ew/Main Bearings.jpeg"],
+  ["connecting-rod-bearings","Connecting Rod Bearings","Engine","Con rod bearing set","static/images/ew/Connecting Rod Bearings.jpeg"],
+  ["flywheel","Flywheel","Engine","Flywheel assembly","static/images/ew/Flywheel.jpeg"],
+  ["flexplate","Flexplate","Engine","Flexplate for automatic transmission","static/images/ew/Flexplate.jpeg"],
+  ["timing-chain","Timing Chain","Engine","Timing chain kit","static/images/ew/Timing Chain.jpeg"],
+  ["timing-belt","Timing Belt","Engine","Timing belt replacement","static/images/ew/Timing Belt.jpeg"],
+  ["timing-gears","Timing Gears","Engine","Timing gear assembly","static/images/ew/Timing Gears.jpeg"],
   ["camshaft","Camshaft","Engine","Engine camshaft","static/images/Camshaft.jpeg"],
   ["camshaft-bearing","Camshaft Bearing","Engine","Camshaft bearing set","static/images/Camshaft Bearing.jpeg"],
   ["intake-valve","Intake Valve","Engine","Intake valve","static/images/Intake Valve.jpeg"],
@@ -205,12 +205,12 @@ const parts = [
   ["air-filter-housing","Air Filter Housing","Air / Intake System","Air filter housing","static/images/Air Filter Housing.jpeg"],
   ["intake-manifold","Intake Manifold","Air / Intake System","Intake manifold","static/images/Intake Manifold.jpeg"],
   ["intake-pipe","Intake Pipe","Air / Intake System","Intake pipe","static/images/Intake Pipe.jpeg"],
-  ["maf-sensor","MAF Sensor","Air / Intake System","Mass air flow sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["map-sensor","MAP Sensor","Air / Intake System","Manifold absolute pressure sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["iat-sensor","IAT Sensor","Air / Intake System","Intake air temp sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["intercooler","Intercooler","Air / Intake System","Intercooler unit","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["turbocharger","Turbocharger","Air / Intake System","Turbocharger assembly","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["supercharger","Supercharger","Air / Intake System","Supercharger assembly","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
+  ["maf-sensor","MAF Sensor","Air / Intake System","Mass air flow sensor","static/images/ew/MAF Sensor.jpeg"],
+  ["map-sensor","MAP Sensor","Air / Intake System","Manifold absolute pressure sensor","static/images/ew/MAP Sensor.jpeg"],
+  ["iat-sensor","IAT Sensor","Air / Intake System","Intake air temp sensor","static/images/ew/IAT Sensor.jpeg"],
+  ["intercooler","Intercooler","Air / Intake System","Intercooler unit","static/images/ew/Intercooler.jpeg"],
+  ["turbocharger","Turbocharger","Air / Intake System","Turbocharger assembly","static/images/ew/Turbocharger.jpeg"],
+  ["supercharger","Supercharger","Air / Intake System","Supercharger assembly","static/images/ew/Supercharger.jpeg"],
   ["spark-plug","Spark Plug","Ignition System","Spark plug","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
   ["ignition-coil","Ignition Coil","Ignition System","Ignition coil","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
   ["coil-pack","Coil Pack","Ignition System","Ignition coil pack","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
@@ -280,14 +280,48 @@ const parts = [
   ["diesel-injector","Diesel Injector","Diesel Engine","Diesel injector","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
   ["common-rail","Common Rail","Diesel Engine","Common rail system","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
   ["diesel-high-pressure-fuel-pump","High Pressure Fuel Pump","Diesel Engine","Diesel high pressure pump","static/images/High Pressure Fuel Pump (GDIDiesel.jpeg"],
-  ["diesel-turbocharger","Turbocharger","Diesel Engine","Diesel turbocharger","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["diesel-intercooler","Intercooler","Diesel Engine","Diesel intercooler","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
+  ["diesel-turbocharger","Turbocharger","Diesel Engine","Diesel turbocharger","static/images/ew/Turbocharger.jpeg"],
+  ["diesel-intercooler","Intercooler","Diesel Engine","Diesel intercooler","static/images/ew/Intercooler.jpeg"],
   ["diesel-dpf","DPF","Diesel Engine","Diesel particulate filter","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
   ["diesel-oxidation-catalyst","Diesel Oxidation Catalyst","Diesel Engine","DOC catalytic converter","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
   ["nox-sensor","NOx Sensor","Diesel Engine","NOx sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
   ["adblue-def-system","AdBlue / DEF System","Diesel Engine","DEF / AdBlue system","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["brake-pads","Brake Pads","Brake","Brake pad replacement","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
-  ["brake-disc","Brake Disc","Brake","Brake disc / rotor","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  // ==========================================
+  // Brake Parts (20 Items)
+  // ==========================================
+  ["brake-pad-front","Brake Pad – Front","Brake Parts","High-friction ceramic front disc brake pad set","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
+  ["brake-pad-rear","Brake Pad – Rear","Brake Parts","Precision rear axle disc brake pad set with noise reduction shims","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
+  ["brake-disc-rotor-front","Brake Disc / Rotor – Front","Brake Parts","Ventilated anti-fade front wheel brake rotor disc","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["brake-disc-rotor-rear","Brake Disc / Rotor – Rear","Brake Parts","Solid precision-machined rear brake rotor disc","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["brake-caliper","Brake Caliper","Brake Parts","Hydraulic single / dual piston brake clamping caliper assembly","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["brake-caliper-repair-kit","Brake Caliper Repair Kit","Brake Parts","Piston seals, boots, O-rings, and hardware overhaul kit","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["caliper-slide-pin","Caliper Slide Pin / Guide Pin","Brake Parts","Precision-ground caliper slide guide pins with dust boots","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["brake-shoe-rear-drum","Brake Shoe – Rear Drum","Brake Parts","High-durability rear drum friction brake shoe set","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
+  ["brake-drum","Brake Drum","Brake Parts","Balanced heavy-duty cast iron rear wheel brake drum","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["wheel-cylinder","Wheel Cylinder","Brake Parts","Rear drum hydraulic wheel brake cylinder assembly","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["brake-master-cylinder","Brake Master Cylinder","Brake Parts","Dual-reservoir hydraulic brake master cylinder pump","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
+  ["brake-booster","Brake Booster","Brake Parts","Vacuum power brake servo booster diaphragm unit","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
+  ["brake-hose","Brake Hose","Brake Parts","Reinforced high-pressure hydraulic flexible brake line hose","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["brake-pipe","Brake Pipe","Brake Parts","Anti-corrosive metal hydraulic brake line hard pipe tubing","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["abs-wheel-speed-sensor","ABS Wheel Speed Sensor","Brake Parts","Magnetic anti-lock brake wheel speed sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
+  ["brake-pad-wear-sensor","Brake Pad Wear Sensor","Brake Parts","Electric brake pad friction wear indicator wire sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
+  ["brake-bleeder-screw","Brake Bleeder Screw","Brake Parts","High-strength caliper hydraulic air bleeder valve screw","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["hand-brake-cable","Hand Brake Cable","Brake Parts","Flexible steel wire emergency parking hand brake cable","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["parking-brake-shoe","Parking Brake Shoe","Brake Parts","Internal drum-in-hat parking brake shoe set","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
+  ["brake-light-switch","Brake Light / Stop Lamp Switch","Brake Parts","Pedal-activated stop lamp electric switch sensor","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
+
+  // ==========================================
+  // STEERING & POWER STEERING (8 Items)
+  // ==========================================
+  ["steering-wheel-column","Steering Wheel & Column","Steering & Power Steering","Telescopic steering column assembly with angle sensor","https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=700&q=80"],
+  ["steering-rack-pinion","Steering Rack & Pinion","Steering & Power Steering","Complete hydraulic / electronic steering rack and pinion assembly","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["tie-rod-rack-end","Tie Rod & Rack End","Steering & Power Steering","Inner tie rod and outer steering tie rod end set","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["steering-knuckle-ball-joint","Steering Knuckle & Ball Joint","Steering & Power Steering","Forged suspension steering knuckle and lower ball joint","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
+  ["hydraulic-power-steering","Hydraulic Power Steering","Steering & Power Steering","Hydraulic power steering pump, fluid lines, and reservoir","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["electric-power-steering-eps","Electric Power Steering (EPS)","Steering & Power Steering","Electric steering assist motor and column ECU controller","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
+  ["steering-mounting-bush","Steering Mounting & Bush","Steering & Power Steering","Heavy-duty rubber and polyurethane steering rack mounting bush","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["steering-repair-kits","Steering Repair Kits","Steering & Power Steering","Steering rack oil seal kit, boots, clamps, and overhaul parts","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+
   ["shock","Shock Absorber","Suspension","Suspension component","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
   ["clutch","Clutch Kit","Other","Clutch replacement kit","https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=80"],
   ["headlight","Headlight","Other","Headlamp replacement","https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=700&q=80"]
@@ -315,7 +349,9 @@ const partCategoryIcons = {
   "Engine Electrical Parts": "🔋",
   "Belts & External Engine Parts": "🔩",
   "Diesel Engine": "🛠️",
+  "Brake Parts": "🛑",
   "Brake": "🛑",
+  "Steering & Power Steering": "🕹️",
   "Suspension": "🛞",
   "AC": "❄️",
   "Other": "🧰"
@@ -323,18 +359,40 @@ const partCategoryIcons = {
 
 const $ = id => document.getElementById(id);
 const toast = msg => { $("toast").textContent=msg; $("toast").classList.add("show"); setTimeout(()=> $("toast").classList.remove("show"),2600); };
-function normalizeWhatsAppNumber(raw, defaultCountryCode = ""){
-  const digits = String(raw || "").replace(/\D/g, "");
+function normalizeWhatsAppNumber(raw, defaultCountryCode = "91"){
+  let digits = String(raw || "").replace(/\D/g, "");
   if (!digits) return "";
-  if (defaultCountryCode && !digits.startsWith(defaultCountryCode)) {
-    return `${defaultCountryCode}${digits.replace(/^0+/, "")}`;
+  digits = digits.replace(/^0+/, "");
+  const cc = String(defaultCountryCode || "").replace(/\D/g, "");
+  if (cc && !digits.startsWith(cc)) {
+    if (digits.length === 10 && cc === "91") {
+      digits = `${cc}${digits}`;
+    }
   }
   return digits;
 }
-function buildWhatsAppUrl(message, rawNumber, defaultCountryCode = ""){
+
+function buildWhatsAppUrl(message, rawNumber, defaultCountryCode = "91"){
   const number = normalizeWhatsAppNumber(rawNumber, defaultCountryCode);
   if (!number) return "";
-  return `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+}
+
+function openWhatsApp(url){
+  if (!url) return;
+  try {
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      try { document.body.removeChild(a); } catch(e){}
+    }, 250);
+  } catch (err) {
+    window.location.href = url;
+  }
 }
 
 function getPartVisual(p){
@@ -383,7 +441,7 @@ function renderParts(){
   const filtered=parts.filter(p => {
     const text = (p[1] + " " + p[2] + " " + p[3]).toLowerCase();
     const matchesQuery = !q || text.includes(q);
-    const matchesCategory = cat === "all" || cat === "none" || p[2] === cat;
+    const matchesCategory = cat === "all" || cat === "none" || p[2] === cat || (cat === "Brake" && p[2] === "Brake Parts") || (cat === "Brake Parts" && p[2] === "Brake");
     return matchesQuery && matchesCategory;
   });
 
@@ -394,6 +452,55 @@ function renderParts(){
 }
 function togglePart(id){state.parts.has(id)?state.parts.delete(id):state.parts.add(id);renderParts();updateSummary();}
 function selectedPartNames(){return parts.filter(p=>state.parts.has(p[0])).map(p=>p[1]);}
+function updateProgressBar(){
+  const hasVehicle = Boolean(state.brand && state.model);
+  const hasNeeds = Boolean(state.services.size > 0 || state.parts.size > 0);
+  const hasLocation = Boolean(getValue("address").length > 3);
+  const normalizedPhone = normalizeWhatsAppNumber(getValue("phone"));
+  const hasContact = Boolean(getValue("name").length > 1 && normalizedPhone.length >= 8);
+  const hasScheduleOrReview = Boolean(getValue("date") || getValue("time") || getValue("notes") || (hasVehicle && hasNeeds && hasLocation && hasContact));
+
+  let score = 0;
+  if (hasVehicle) score += 20;
+  if (hasNeeds) score += 20;
+  if (hasLocation) score += 20;
+  if (hasContact) score += 20;
+  if (hasScheduleOrReview) score += 20;
+
+  const pct = Math.min(100, score);
+
+  const fill = $("progressFillBar");
+  if (fill) fill.style.width = pct + "%";
+  const stickyBar = $("formProgressBar");
+  if (stickyBar) stickyBar.style.width = pct + "%";
+
+  const badge = $("progressPercentBadge");
+  if (badge) badge.textContent = pct + "% Completed";
+
+  const statusTitle = $("progressStatusText");
+  const hint = $("progressHintText");
+
+  if (pct === 0) {
+    if (statusTitle) statusTitle.textContent = "Request Progress: 0%";
+    if (hint) hint.textContent = "Select your vehicle & requirements to begin";
+  } else if (pct < 40) {
+    if (statusTitle) statusTitle.textContent = "Vehicle Selected · " + pct + "%";
+    if (hint) hint.textContent = "Choose repair service or spare parts needed";
+  } else if (pct < 60) {
+    if (statusTitle) statusTitle.textContent = "Vehicle & Needs Added · " + pct + "%";
+    if (hint) hint.textContent = "Set your service location or use GPS";
+  } else if (pct < 80) {
+    if (statusTitle) statusTitle.textContent = "Location Set · " + pct + "%";
+    if (hint) hint.textContent = "Enter your contact name & WhatsApp number";
+  } else if (pct < 100) {
+    if (statusTitle) statusTitle.textContent = "Almost Complete! · " + pct + "%";
+    if (hint) hint.textContent = "Add preferred timing or review your request";
+  } else {
+    if (statusTitle) statusTitle.textContent = "Ready to Dispatch · 100% ✨";
+    if (hint) hint.textContent = "Everything looks great! Click Send on WhatsApp";
+  }
+}
+
 function updateSummary(){
   const car=state.brand?(state.model?`${state.brand} ${state.model}${state.year?" ("+state.year+")":""}`:`${state.brand} — model not selected`):"Not selected";
   const servicesText = selectedServiceNames().join(", ") || "None selected";
@@ -405,29 +512,104 @@ function updateSummary(){
   if (sumService) {
     sumService.textContent = servicesText;
   }
+  const sumSchedule = document.getElementById("sumSchedule");
+  if (sumSchedule) {
+    const d = $("date") ? $("date").value : "";
+    const t = $("time") ? $("time").value : "";
+    if (d || t) {
+      sumSchedule.textContent = `${d || "Flexible date"} · ${t || "Flexible time"}`;
+    } else {
+      sumSchedule.textContent = "Flexible / As soon as possible";
+    }
+  }
+  updateProgressBar();
 }
-function getValue(id){return $(id).value.trim();}
+function getValue(id){return $(id) ? $(id).value.trim() : "";}
 function makeMessage(){
-  const date=$("date").value||"Not specified", time=$("time").value||"Not specified";
-  const coords=state.coordinates?`\nMap location: https://maps.google.com/?q=${state.coordinates.lat},${state.coordinates.lng}`:"";
-  return `Hello, I would like to request a car service from ${BUSINESS_NAME}.\n\nCUSTOMER DETAILS\nName: ${getValue("name")}\nWhatsApp: ${getValue("phone")}\n\nVEHICLE\nBrand: ${state.brand||"Not selected"}\nModel: ${state.model||"Not selected"}\nYear: ${state.year||"Not specified"}\n\nREPAIR & SERVICES REQUESTED\n${selectedServiceNames().length?selectedServiceNames().map(x=>"- "+x).join("\n"):"- None selected"}\n\nSPARE PARTS REQUIRED\n${selectedPartNames().length?selectedPartNames().map(x=>"- "+x).join("\n"):"- None selected"}\n\nSERVICE LOCATION\nType: ${state.location}\nAddress: ${getValue("address")||"Not provided"}${coords}\n\nPREFERRED DATE: ${date}\nPREFERRED TIME: ${time}\n\nADDITIONAL NOTES\n${getValue("notes")||"None"}\n\nPlease contact me regarding availability and quotation.\nThank you.`;
+  const date = getValue("date") || "Not specified / Flexible";
+  const time = getValue("time") || "Not specified / Flexible";
+  const coords = state.coordinates ? `\n📍 GPS Pin: https://maps.google.com/?q=${state.coordinates.lat},${state.coordinates.lng}` : "";
+  const servicesList = selectedServiceNames().length ? selectedServiceNames().map(x=>"  • " + x).join("\n") : "  • None selected";
+  const partsList = selectedPartNames().length ? selectedPartNames().map(x=>"  • " + x).join("\n") : "  • None selected";
+
+  return `*CAR SERVICE & SPARE PARTS REQUEST*\n*${BUSINESS_NAME}*\n\n` +
+    `👤 *CUSTOMER CONTACT*\n` +
+    `• Name: ${getValue("name")}\n` +
+    `• Phone: ${getValue("phone")}\n\n` +
+    `🚗 *VEHICLE INFO*\n` +
+    `• Brand: ${state.brand || "Not selected"}\n` +
+    `• Model: ${state.model || "Not selected"}\n` +
+    `• Year: ${state.year || "Not specified"}\n\n` +
+    `🛠️ *SERVICES REQUESTED*\n` +
+    `${servicesList}\n\n` +
+    `⚙️ *SPARE PARTS REQUIRED*\n` +
+    `${partsList}\n\n` +
+    `📍 *SERVICE LOCATION*\n` +
+    `• Type: ${state.location}\n` +
+    `• Address: ${getValue("address") || "Not provided"}${coords}\n\n` +
+    `📅 *PREFERRED TIMING*\n` +
+    `• Date: ${date}\n` +
+    `• Time: ${time}\n\n` +
+    `📝 *ADDITIONAL NOTES*\n` +
+    `${getValue("notes") || "None"}\n\n` +
+    `_Please verify technician availability and provide an estimated quotation._\n_Thank you!_`;
 }
+
 function sendWhatsApp(){
-  const name=getValue("name"), phone=getValue("phone"), address=getValue("address");
-  if(!state.brand||!state.model){toast("Please select your car brand and model.");$("cars").scrollIntoView({behavior:"smooth"});return;}
-  if(!name){toast("Please enter your name.");$("name").focus();return;}
-  const normalizedPhone = normalizeWhatsAppNumber(phone);
-  if(!normalizedPhone || normalizedPhone.length < 8){toast("Please enter a valid WhatsApp number.");$("phone").focus();return;}
-  if(!address){toast("Please enter your service location.");$("address").focus();return;}
-  if(WHATSAPP_NUMBER.includes("X")){toast("Please add the client's WhatsApp number in script.js.");return;}
+  const name = getValue("name"), phone = getValue("phone"), address = getValue("address");
+  if(!state.brand || !state.model){
+    toast("Please select your car brand and model first.");
+    const carsSec = $("cars");
+    if (carsSec) carsSec.scrollIntoView({behavior:"smooth"});
+    return;
+  }
+  if(!name){
+    toast("Please enter your name.");
+    if($("name")) $("name").focus();
+    return;
+  }
+  const normalizedPhone = normalizeWhatsAppNumber(phone, WA_DEFAULT_COUNTRY_CODE);
+  if(!normalizedPhone || normalizedPhone.length < 8){
+    toast("Please enter a valid WhatsApp phone number.");
+    if($("phone")) $("phone").focus();
+    return;
+  }
+  if(!address){
+    toast("Please enter your service location or address.");
+    if($("address")) $("address").focus();
+    return;
+  }
+  if(WHATSAPP_NUMBER.includes("X")){
+    toast("Please verify WhatsApp number settings.");
+    return;
+  }
   const messageUrl = buildWhatsAppUrl(makeMessage(), WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
-  if (!messageUrl) { toast("WhatsApp number is missing."); return; }
-  window.open(messageUrl, "_blank");
+  if (!messageUrl) {
+    toast("Could not create WhatsApp link. Please check number.");
+    return;
+  }
+  toast("Opening WhatsApp with your request details...");
+  openWhatsApp(messageUrl);
 }
+
 function clearAll(){
   state.brand="";state.model="";state.year="";state.services.clear();state.parts.clear();state.location="Home";state.coordinates=null;
-  $("modelSelect").innerHTML="<option value=''>Choose a model</option>";$("carYear").value="";$("address").value="";$("name").value="";$("phone").value="";$("date").value="";$("time").value="";$("notes").value="";
-  document.querySelectorAll(".location-card").forEach((x,i)=>x.classList.toggle("active",i===0));renderBrands();renderServices();renderParts();updateSummary();toast("Your selections were cleared.");
+  $("modelSelect").innerHTML="<option value=''>Choose a model</option>";
+  if($("carYear")) $("carYear").value="";
+  if($("address")) $("address").value="";
+  if($("name")) $("name").value="";
+  if($("phone")) $("phone").value="";
+  if($("date")) $("date").value="";
+  if($("time")) $("time").value="";
+  if($("notes")) $("notes").value="";
+  document.querySelectorAll(".location-card").forEach((x,i)=>x.classList.toggle("active",i===0));
+  document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.remove("active"));
+  document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.remove("active"));
+  document.querySelectorAll("[data-symptom]").forEach(c=>c.classList.remove("active"));
+  document.querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
+  if($("partCategory")) $("partCategory").value="none";
+  if($("partSearch")) $("partSearch").value="";
+  renderBrands();renderServices();renderParts();updateSummary();updateProgressBar();toast("Your selections were cleared.");
 }
 
 function init(){
@@ -436,12 +618,137 @@ function init(){
     const service=e.target.closest("[data-service]"); if(service) toggleService(service.dataset.service);
     const part=e.target.closest("[data-part]"); if(part) togglePart(part.dataset.part);
     const loc=e.target.closest("[data-location]"); if(loc){state.location=loc.dataset.location;document.querySelectorAll(".location-card").forEach(x=>x.classList.toggle("active",x===loc));updateSummary();}
-    const wa=e.target.closest("[data-whatsapp]"); if(wa){e.preventDefault();if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}const messageUrl = buildWhatsAppUrl("Hello, I would like to enquire about your car repair and spare-parts service.", WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE); if(!messageUrl){toast("WhatsApp number is missing."); return;}window.open(messageUrl,"_blank");}
+
+    // Promotional triple deal advertisement click handler
+    const dealBtn = e.target.closest("[data-deal-part]");
+    if (dealBtn) {
+      e.preventDefault();
+      const partName = dealBtn.dataset.dealPart || "Special Spare Part";
+      const dealPrice = dealBtn.dataset.dealPrice || "";
+      const dealMrp = dealBtn.dataset.dealMrp || "";
+      const dealDiscount = dealBtn.dataset.dealDiscount || "";
+      const promoMsg = `Hello ${BUSINESS_NAME},\n\nI saw your Special Offer advertisement on your website:\n\n*PRODUCT:* ${partName}\n*OFFER DEAL PRICE:* ${dealPrice}${dealMrp ? ` (Regular MRP: ${dealMrp})` : ""}\n*DISCOUNT:* ${dealDiscount}\n\nI would like to know more about this product, vehicle compatibility for my car, and availability for doorstep delivery.\n\nThank you!`;
+      const url = buildWhatsAppUrl(promoMsg, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+      if (url) {
+        toast(`Opening WhatsApp for ${partName} offer...`);
+        openWhatsApp(url);
+      }
+      return;
+    }
+
+    const wa=e.target.closest("[data-whatsapp]");
+    if(wa){
+      e.preventDefault();
+      if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}
+      const messageUrl = buildWhatsAppUrl("Hello Zee Auto Park, I would like to enquire about your car repair and spare-parts service.", WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+      if(!messageUrl){toast("WhatsApp number is missing."); return;}
+      toast("Opening WhatsApp...");
+      openWhatsApp(messageUrl);
+    }
   });
   $("modelSelect").addEventListener("change",e=>{state.model=e.target.value;updateSummary();$("selectedCar").textContent=state.model?`${state.brand} ${state.model}${state.year?" · "+state.year:""}`:"Choose a model";});
   $("carYear").addEventListener("input",e=>{state.year=e.target.value;updateSummary();if(state.brand&&state.model)$("selectedCar").textContent=`${state.brand} ${state.model}${state.year?" · "+state.year:""}`;});
-  $("partSearch").addEventListener("input",renderParts);$("partCategory").addEventListener("change",renderParts);
-  $("sendWhatsApp").addEventListener("click",sendWhatsApp);$("clearBtn").addEventListener("click",clearAll);
+  $("partSearch").addEventListener("input",renderParts);
+  $("partCategory").addEventListener("change",()=>{
+    const catVal = $("partCategory").value;
+    document.querySelectorAll(".cat-pill").forEach(p=>p.classList.toggle("active",p.dataset.cat===catVal));
+    renderParts();
+  });
+
+  // Category Pills selection & scroll sync
+  document.querySelectorAll(".cat-pill").forEach(pill=>{
+    pill.addEventListener("click",()=>{
+      document.querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
+      pill.classList.add("active");
+      const targetCat = pill.dataset.cat;
+      $("partCategory").value = targetCat;
+      renderParts();
+    });
+  });
+
+  // Quick Date selector chips
+  document.querySelectorAll("[data-date-chip]").forEach(chip=>{
+    chip.addEventListener("click",()=>{
+      const type = chip.dataset.dateChip;
+      const today = new Date();
+      let targetDate = "";
+      if (type === "today") {
+        targetDate = today.toISOString().split("T")[0];
+      } else if (type === "tomorrow") {
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        targetDate = tomorrow.toISOString().split("T")[0];
+      } else if (type === "custom") {
+        $("date").focus();
+        if ($("date").showPicker) { try { $("date").showPicker(); } catch(err){} }
+        return;
+      }
+      $("date").value = targetDate;
+      document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.toggle("active",c===chip));
+      updateSummary();
+    });
+  });
+
+  if ($("date")) {
+    $("date").addEventListener("input",()=>{
+      updateSummary();
+      document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.remove("active"));
+    });
+  }
+
+  // Quick Time slot cards
+  document.querySelectorAll("[data-time-slot]").forEach(slotCard=>{
+    slotCard.addEventListener("click",()=>{
+      const slotVal = slotCard.dataset.timeSlot;
+      if (slotVal === "ASAP") {
+        const curNotes = $("notes").value.trim();
+        if (!curNotes.includes("URGENT / ASAP")) {
+          $("notes").value = curNotes ? `${curNotes} (URGENT / ASAP service requested)` : "URGENT / ASAP service requested";
+        }
+        const now = new Date();
+        const hrs = String(now.getHours()).padStart(2, "0");
+        const mins = String(now.getMinutes()).padStart(2, "0");
+        $("time").value = `${hrs}:${mins}`;
+      } else {
+        $("time").value = slotVal;
+      }
+      document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.toggle("active",c===slotCard));
+      updateSummary();
+    });
+  });
+
+  if ($("time")) {
+    $("time").addEventListener("input",()=>{
+      updateSummary();
+      document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.remove("active"));
+    });
+  }
+
+  // Common Trouble Symptoms chips
+  document.querySelectorAll("[data-symptom]").forEach(chip=>{
+    chip.addEventListener("click",()=>{
+      chip.classList.toggle("active");
+      const symptom = chip.dataset.symptom;
+      let cur = $("notes").value.trim();
+      if (chip.classList.contains("active")) {
+        $("notes").value = cur ? `${cur}, ${symptom}` : symptom;
+      } else {
+        const regex = new RegExp(`(^|,\\s*)${symptom.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, "i");
+        let cleaned = cur.replace(regex, "").trim().replace(/^,\s*/, "").replace(/,\s*,/g, ",");
+        $("notes").value = cleaned;
+      }
+    });
+  });
+
+  ["name", "phone", "address", "notes"].forEach(id => {
+    const el = $(id);
+    if (el) {
+      el.addEventListener("input", updateProgressBar);
+    }
+  });
+
+  $("sendWhatsApp").addEventListener("click",sendWhatsApp);
+  $("clearBtn").addEventListener("click",clearAll);
   $("menuBtn").addEventListener("click",()=> $("mobileNav").classList.toggle("open"));
   document.querySelectorAll("#mobileNav a").forEach(a=>a.addEventListener("click",()=> $("mobileNav").classList.remove("open")));
   $("locateBtn").addEventListener("click",()=>{
@@ -451,10 +758,11 @@ function init(){
       state.coordinates={lat:pos.coords.latitude,lng:pos.coords.longitude};
       $("address").value=`Current location (GPS): ${pos.coords.latitude.toFixed(6)}, ${pos.coords.longitude.toFixed(6)}`;
       toast("Location added to your request.");
+      updateProgressBar();
     },()=>toast("Could not get your location. Please enter it manually."));
   });
 
-  renderBrands();renderServices();renderParts();updateSummary();
+  renderBrands();renderServices();renderParts();updateSummary();updateProgressBar();
 }
 
 document.addEventListener("DOMContentLoaded", init);
