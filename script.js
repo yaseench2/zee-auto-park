@@ -555,28 +555,48 @@ function makeMessage(){
     `_Please verify technician availability and provide an estimated quotation._\n_Thank you!_`;
 }
 
+function highlightMissingField(el) {
+  if (!el) return;
+  el.classList.add("highlight-missing");
+  setTimeout(() => el.classList.remove("highlight-missing"), 2200);
+}
+
 function sendWhatsApp(){
   const name = getValue("name"), phone = getValue("phone"), address = getValue("address");
   if(!state.brand || !state.model){
-    toast("Please select your car brand and model first.");
+    toast("Please select your car brand and model (Required).");
     const carsSec = $("cars");
     if (carsSec) carsSec.scrollIntoView({behavior:"smooth"});
+    highlightMissingField($("modelSelect") || $("brands"));
     return;
   }
   if(!name){
-    toast("Please enter your name.");
-    if($("name")) $("name").focus();
+    toast("Please enter your name (Required).");
+    highlightMissingField($("name"));
+    if($("name")) {
+      $("name").focus();
+      $("name").scrollIntoView({behavior:"smooth", block:"center"});
+    }
     return;
   }
   const normalizedPhone = normalizeWhatsAppNumber(phone, WA_DEFAULT_COUNTRY_CODE);
   if(!normalizedPhone || normalizedPhone.length < 8){
-    toast("Please enter a valid WhatsApp phone number.");
-    if($("phone")) $("phone").focus();
+    toast("Please enter a valid WhatsApp phone number (Required).");
+    const phoneWrap = $("phone") ? $("phone").closest(".phone-input-wrap") || $("phone") : null;
+    highlightMissingField(phoneWrap);
+    if($("phone")) {
+      $("phone").focus();
+      $("phone").scrollIntoView({behavior:"smooth", block:"center"});
+    }
     return;
   }
   if(!address){
-    toast("Please enter your service location or address.");
-    if($("address")) $("address").focus();
+    toast("Please enter your service location or address (Required).");
+    highlightMissingField($("address"));
+    if($("address")) {
+      $("address").focus();
+      $("address").scrollIntoView({behavior:"smooth", block:"center"});
+    }
     return;
   }
   if(WHATSAPP_NUMBER.includes("X")){

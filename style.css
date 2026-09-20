@@ -5,7 +5,8 @@
 }
 
 html {
-  scroll-behavior:smooth
+  scroll-behavior:smooth;
+  scroll-padding-top:80px
 }
 
 body {
@@ -175,6 +176,8 @@ button,input,select,textarea {
 
 .hero-actions {
   display:flex;
+  flex-wrap:wrap;
+  align-items:center;
   gap:12px;
   margin:20px 0
 }
@@ -204,6 +207,34 @@ button,input,select,textarea {
 .btn-outline {
   border:1px solid #ffffff55;
   color:#fff
+}
+
+.btn-special-offers {
+  background:linear-gradient(135deg, #ff4b35 0%, #ea580c 100%);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.28);
+  box-shadow:0 4px 14px rgba(234,88,12,0.35);
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-special-offers:hover {
+  background:linear-gradient(135deg, #ff381e 0%, #d94800 100%);
+  box-shadow:0 6px 20px rgba(234,88,12,0.5);
+  transform:translateY(-2px);
+  color:#fff;
+}
+
+.btn-special-offers .badge-deal-hot {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.25);
+  border-radius:6px;
+  padding:1px 6px;
+  font-size:11px;
+  font-weight:800;
+  margin-left:2px;
 }
 
 .btn-light {
@@ -507,7 +538,11 @@ button,input,select,textarea {
   font-size:11px;
   font-weight:800;
   text-transform:uppercase;
-  color:#6f747a
+  color:#6f747a;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:6px;
 }
 
 .model-panel select,.model-panel input {
@@ -817,6 +852,13 @@ button,input,select,textarea {
   flex-wrap:wrap;
 }
 
+.address-card-header label {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
 .address-card-header label b {
   font-size:13px;
   color:#1e293b;
@@ -955,12 +997,127 @@ button,input,select,textarea {
   color:#334155;
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:6px;
+  flex-wrap:wrap;
 }
 
 .input-card-field .req {
   color:#ff4b35;
   font-weight:800;
+}
+
+/* Badges for Mandatory and Optional Fields */
+.badge-mandatory {
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:#dc2626;
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  border-radius:6px;
+  padding:2px 7px;
+  margin-left:auto;
+  line-height:1.2;
+}
+
+.badge-mandatory::before {
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#ef4444;
+  box-shadow:0 0 0 2px rgba(239,68,68,0.2);
+}
+
+.badge-optional {
+  display:inline-flex;
+  align-items:center;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.3px;
+  color:#64748b;
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  border-radius:6px;
+  padding:2px 6px;
+  margin-left:auto;
+  line-height:1.2;
+}
+
+/* Distinct Mandatory Input Highlight */
+.input-mandatory,
+select.input-mandatory,
+textarea.input-mandatory,
+.phone-input-wrap.input-mandatory {
+  border-left:3.5px solid #ef4444 !important;
+  background:#ffffff !important;
+}
+
+.input-mandatory:focus,
+select.input-mandatory:focus,
+textarea.input-mandatory:focus,
+.phone-input-wrap.input-mandatory:focus-within {
+  border-color:#ff4b35 !important;
+  border-left-color:#dc2626 !important;
+  box-shadow:0 0 0 3px rgba(239,68,68,0.16) !important;
+}
+
+/* Form Fields Legend */
+.form-fields-legend {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:10px 16px;
+  margin-bottom:18px;
+  font-size:12px;
+  color:#475569;
+  box-shadow:0 2px 8px rgba(0,0,0,0.02);
+}
+
+.legend-badge-item {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.legend-badge-item .badge-mandatory,
+.legend-badge-item .badge-optional {
+  margin-left:0;
+}
+
+.legend-desc {
+  font-size:12px;
+  color:#475569;
+  font-weight:500;
+}
+
+.legend-sep {
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+/* Missing Field Alert Animation */
+@keyframes shakeAndGlow {
+  0%, 100% { transform:translateX(0); }
+  20%, 60% { transform:translateX(-6px); }
+  40%, 80% { transform:translateX(6px); }
+}
+
+.highlight-missing {
+  animation:shakeAndGlow 0.5s ease-in-out !important;
+  border-color:#ef4444 !important;
+  border-left:4px solid #b91c1c !important;
+  box-shadow:0 0 0 4px rgba(239,68,68,0.25) !important;
 }
 
 .input-card-field input,.input-card-field textarea {
