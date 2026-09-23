@@ -413,49 +413,75 @@
               <div class="fill-card-icon">🗓️</div>
               <div>
                 <h3>Preferred Schedule</h3>
-                <p>Pick a date or select quick time slots</p>
+                <p>Urgent immediate service or schedule a specific date & time</p>
               </div>
             </div>
             <div class="fill-card-body">
-              <div class="sub-section-title">Quick Date Selection</div>
-              <div class="chip-scroll">
-                <button type="button" class="chip-btn" data-date-chip="today">⚡ Today</button>
-                <button type="button" class="chip-btn" data-date-chip="tomorrow">📅 Tomorrow</button>
-                <button type="button" class="chip-btn" data-date-chip="custom">📆 Pick Date</button>
-              </div>
-              <div class="input-card-field" style="margin-top: 10px;">
-                <label for="date"><span class="label-icon">📅</span> Service Date <span
-                    class="badge-optional">Optional</span></label>
-                <input id="date" type="date">
+              <!-- Schedule Mode Question / Checkbox -->
+              <div class="schedule-question-card">
+                <label class="schedule-checkbox-container" for="bookSpecificSchedule">
+                  <input type="checkbox" id="bookSpecificSchedule" class="schedule-checkbox-input">
+                  <span class="schedule-custom-tick">
+                    <svg class="tick-svg" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8.5L6.5 12L13 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="schedule-checkbox-text">
+                    <span class="schedule-question-title">Book a preferred date and time</span>
+                    <span class="schedule-question-hint">Tick to choose date & time · Leave unticked for urgent / ASAP dispatch</span>
+                  </div>
+                </label>
               </div>
 
-              <div class="sub-section-title" style="margin-top: 14px;">Preferred Time Window</div>
-              <div class="time-slots-grid">
-                <button type="button" class="time-slot-card" data-time-slot="09:00">
-                  <span class="slot-icon">🌅</span>
-                  <b>Morning</b>
-                  <small>8 AM – 12 PM</small>
-                </button>
-                <button type="button" class="time-slot-card" data-time-slot="13:00">
-                  <span class="slot-icon">☀️</span>
-                  <b>Afternoon</b>
-                  <small>12 PM – 4 PM</small>
-                </button>
-                <button type="button" class="time-slot-card" data-time-slot="17:00">
-                  <span class="slot-icon">🌆</span>
-                  <b>Evening</b>
-                  <small>4 PM – 8 PM</small>
-                </button>
-                <button type="button" class="time-slot-card" data-time-slot="ASAP">
-                  <span class="slot-icon">⚡</span>
-                  <b>Urgent / ASAP</b>
-                  <small>Immediate visit</small>
-                </button>
+              <!-- State A: Urgent Banner (Visible when UNCHECKED) -->
+              <div class="urgent-schedule-banner" id="urgentScheduleBanner">
+                <div class="urgent-banner-icon">⚡</div>
+                <div class="urgent-banner-content">
+                  <div class="urgent-badge-row">
+                    <span class="urgent-status-tag">🚨 Urgent / ASAP</span>
+                    <b>Immediate Assistance</b>
+                  </div>
+                  <p>No date selection needed. Our technician will contact you and head to your location as soon as possible.</p>
+                </div>
               </div>
-              <div class="input-card-field" style="margin-top: 10px;">
-                <label for="time"><span class="label-icon">⏰</span> Specific Time <span
-                    class="badge-optional">Optional</span></label>
-                <input id="time" type="time">
+
+              <!-- State B: Preferred Schedule System (Visible when CHECKED, without urgent menu) -->
+              <div class="preferred-schedule-wrap" id="preferredScheduleWrap" style="display: none;">
+                <div class="sub-section-title">Quick Date Selection</div>
+                <div class="chip-scroll">
+                  <button type="button" class="chip-btn" data-date-chip="today">⚡ Today</button>
+                  <button type="button" class="chip-btn" data-date-chip="tomorrow">📅 Tomorrow</button>
+                  <button type="button" class="chip-btn" data-date-chip="custom">📆 Pick Date</button>
+                </div>
+                <div class="input-card-field" style="margin-top: 10px;">
+                  <label for="date"><span class="label-icon">📅</span> Service Date <span
+                      class="badge-optional">Optional</span></label>
+                  <input id="date" type="date">
+                </div>
+
+                <div class="sub-section-title" style="margin-top: 14px;">Preferred Time Window</div>
+                <div class="time-slots-grid">
+                  <button type="button" class="time-slot-card" data-time-slot="09:00">
+                    <span class="slot-icon">🌅</span>
+                    <b>Morning</b>
+                    <small>8 AM – 12 PM</small>
+                  </button>
+                  <button type="button" class="time-slot-card" data-time-slot="13:00">
+                    <span class="slot-icon">☀️</span>
+                    <b>Afternoon</b>
+                    <small>12 PM – 4 PM</small>
+                  </button>
+                  <button type="button" class="time-slot-card" data-time-slot="17:00">
+                    <span class="slot-icon">🌆</span>
+                    <b>Evening</b>
+                    <small>4 PM – 8 PM</small>
+                  </button>
+                </div>
+                <div class="input-card-field" style="margin-top: 10px;">
+                  <label for="time"><span class="label-icon">⏰</span> Specific Time <span
+                      class="badge-optional">Optional</span></label>
+                  <input id="time" type="time">
+                </div>
               </div>
             </div>
           </div>
