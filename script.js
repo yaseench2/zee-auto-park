@@ -459,7 +459,10 @@ function updateProgressBar(){
   const hasLocation = Boolean(getValue("address").length > 3);
   const normalizedPhone = normalizeWhatsAppNumber(getValue("phone"));
   const hasContact = Boolean(getValue("name").length > 1 && normalizedPhone.length >= 8);
-  const hasScheduleOrReview = Boolean(getValue("date") || getValue("time") || getValue("notes") || (hasVehicle && hasNeeds && hasLocation && hasContact));
+  const isSpecificSchedule = $("bookSpecificSchedule") && $("bookSpecificSchedule").checked;
+  const hasScheduleOrReview = isSpecificSchedule
+    ? Boolean(getValue("date") || getValue("time") || getValue("notes") || (hasVehicle && hasNeeds && hasLocation && hasContact))
+    : true;
 
   let score = 0;
   if (hasVehicle) score += 20;
@@ -515,23 +518,32 @@ function updateSummary(){
   }
   const sumSchedule = document.getElementById("sumSchedule");
   if (sumSchedule) {
-    const d = $("date") ? $("date").value : "";
-    const t = $("time") ? $("time").value : "";
-    if (d || t) {
-      sumSchedule.textContent = `${d || "Flexible date"} · ${t || "Flexible time"}`;
+    const isSpecific = $("bookSpecificSchedule") && $("bookSpecificSchedule").checked;
+    if (!isSpecific) {
+      sumSchedule.innerHTML = `<span class="badge-urgent-tag">🚨 Urgent</span> Immediate / ASAP Service`;
     } else {
-      sumSchedule.textContent = "Flexible / As soon as possible";
+      const d = $("date") ? $("date").value : "";
+      const t = $("time") ? $("time").value : "";
+      if (d || t) {
+        sumSchedule.textContent = `${d || "Flexible date"} · ${t || "Flexible time"}`;
+      } else {
+        sumSchedule.textContent = "Preferred Date & Time (Flexible)";
+      }
     }
   }
   updateProgressBar();
 }
 function getValue(id){return $(id) ? $(id).value.trim() : "";}
 function makeMessage(){
-  const date = getValue("date") || "Not specified / Flexible";
-  const time = getValue("time") || "Not specified / Flexible";
-  const coords = state.coordinates ? `\n📍 GPS Pin: https://maps.google.com/?q=${state.coordinates.lat},${state.coordinates.lng}` : "";
-  const servicesList = selectedServiceNames().length ? selectedServiceNames().map(x=>"  • " + x).join("\n") : "  • None selected";
-  const partsList = selectedPartNames().length ? selectedPartNames().map(x=>"  • " + x).join("\n") : "  • None selected";
+  const isSpecific = $("bookSpecificSchedule") && $("bookSpecificSchedule").checked;
+  let timingSection = "";
+  if (!isSpecific) {
+    timingSection = `📅 *SERVICE TIMING*\n• Mode: 🚨 URGENT (Immediate Service / As Soon As Possible)`;
+  } else {
+    const date = getValue("date") || "Flexible / To be confirmed";
+    const time = getValue("time") || "Flexible / To be confirmed";
+    timingSection = `📅 *PREFERRED TIMING*\n• Date: ${date}\n• Time: ${time}`;
+  }
 
   return `*CAR SERVICE & SPARE PARTS REQUEST*\n*${BUSINESS_NAME}*\n\n` +
     `👤 *CUSTOMER CONTACT*\n` +
@@ -548,9 +560,7 @@ function makeMessage(){
     `📍 *SERVICE LOCATION*\n` +
     `• Type: ${state.location}\n` +
     `• Address: ${getValue("address") || "Not provided"}${coords}\n\n` +
-    `📅 *PREFERRED TIMING*\n` +
-    `• Date: ${date}\n` +
-    `• Time: ${time}\n\n` +
+    `${timingSection}\n\n` +
     `📝 *ADDITIONAL NOTES*\n` +
     `${getValue("notes") || "None"}\n\n` +
     `_Please verify technician availability and provide an estimated quotation._\n_Thank you!_`;
@@ -623,6 +633,15 @@ function clearAll(){
   if($("date")) $("date").value="";
   if($("time")) $("time").value="";
   if($("notes")) $("notes").value="";
+  if($("bookSpecificSchedule")) {
+    $("bookSpecificSchedule").checked = false;
+    const card = $("bookSpecificSchedule").closest(".schedule-question-card");
+    if (card) card.classList.remove("checked");
+    const banner = $("urgentScheduleBanner");
+    const wrap = $("preferredScheduleWrap");
+    if (banner) banner.style.display = "flex";
+    if (wrap) wrap.style.display = "none";
+  }
   document.querySelectorAll(".location-card").forEach((x,i)=>x.classList.toggle("active",i===0));
   document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.remove("active"));
   document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.remove("active"));
@@ -743,6 +762,21 @@ function init(){
     $("time").addEventListener("input",()=>{
       updateSummary();
       document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.remove("active"));
+    });
+  }
+
+  // Schedule Mode Checkbox Toggle listener
+  if ($("bookSpecificSchedule")) {
+    $("bookSpecificSchedule").addEventListener("change", () => {
+      const isSpecific = $("bookSpecificSchedule").checked;
+      const banner = $("urgentScheduleBanner");
+      const wrap = $("preferredScheduleWrap");
+      const card = $("bookSpecificSchedule").closest(".schedule-question-card");
+      if (card) card.classList.toggle("checked", isSpecific);
+      if (banner) banner.style.display = isSpecific ? "none" : "flex";
+      if (wrap) wrap.style.display = isSpecific ? "block" : "none";
+      updateSummary();
+      updateProgressBar();
     });
   }
 
