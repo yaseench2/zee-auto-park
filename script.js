@@ -64,7 +64,7 @@ const parts = [
   ["shark-fin-antenna","Shark Fin Antenna","Car Exterior Accessories","FM/AM signal receiver aerodynamic roof shark fin","https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80"],
   ["car-decals-stickers","Car Decals / Stickers","Car Exterior Accessories","Premium vinyl exterior car body graphics and racing stripes","https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80"],
   ["reflective-tape","Reflective Tape","Car Exterior Accessories","High-visibility nighttime safety reflective warning tape","https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80"],
-  ["car-seat-cover","Car Seat Cover","Interior Accessories","Premium breathable leatherette full car seat cover set","https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80"],
+  ["car-seat-cover","Car Seat Cover","Interior Accessories","Premium breathable leatherette full car seat cover set","static/images/offer/car seat Cover.jpeg"],
   ["steering-wheel-cover","Steering Wheel Cover","Interior Accessories","Anti-slip breathable leather stitched steering wheel grip","https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=700&q=80"],
   ["dashboard-mat","Dashboard Mat","Interior Accessories","Non-slip anti-glare sun protection dashboard mat","https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80"],
   ["dashboard-cover","Dashboard Cover","Interior Accessories","Custom-fit protective dashboard cover pad","https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80"],
@@ -98,7 +98,8 @@ const parts = [
   ["bluetooth-adapter","Bluetooth Adapter","Mobile & Electronics","Aux 3.5mm wireless Bluetooth audio receiver adapter","https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=700&q=80"],
   ["car-stereo","Car Stereo","Mobile & Electronics","Single & Double DIN Bluetooth automotive audio receiver","https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=700&q=80"],
   ["android-car-player","Android Car Player","Mobile & Electronics","Smart Android touchscreen media player with GPS & WiFi","https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"],
-  ["touchscreen-display","Touchscreen Display","Mobile & Electronics","HD IPS wireless Apple CarPlay & Android Auto display","https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"],
+  ["touchscreen-display","Touchscreen Display","Mobile & Electronics","HD IPS wireless Apple CarPlay & Android Auto display","static/images/offer/Dashboard Display.jpeg"],
+  ["dashboard-display","Dashboard Display","Mobile & Electronics","HD smart touchscreen dashboard infotainment display with navigation & Apple CarPlay","static/images/offer/Dashboard Display.jpeg"],
   ["reverse-camera","Reverse Camera","Mobile & Electronics","Wide-angle HD night vision waterproof rear backup camera","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
   ["360-camera","360° Camera","Mobile & Electronics","Full 360-degree bird's-eye surround view camera system","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
   ["parking-sensor","Parking Sensor","Mobile & Electronics","Ultrasonic reverse parking radar sensors with LED display","https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80"],
@@ -289,20 +290,20 @@ const parts = [
   // ==========================================
   // Brake Parts (20 Items)
   // ==========================================
-  ["brake-pad-front","Brake Pad – Front","Brake Parts","High-friction ceramic front disc brake pad set","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
-  ["brake-pad-rear","Brake Pad – Rear","Brake Parts","Precision rear axle disc brake pad set with noise reduction shims","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
-  ["brake-disc-rotor-front","Brake Disc / Rotor – Front","Brake Parts","Ventilated anti-fade front wheel brake rotor disc","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
-  ["brake-disc-rotor-rear","Brake Disc / Rotor – Rear","Brake Parts","Solid precision-machined rear brake rotor disc","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
-  ["brake-caliper","Brake Caliper","Brake Parts","Hydraulic single / dual piston brake clamping caliper assembly","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
-  ["brake-caliper-repair-kit","Brake Caliper Repair Kit","Brake Parts","Piston seals, boots, O-rings, and hardware overhaul kit","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
-  ["caliper-slide-pin","Caliper Slide Pin / Guide Pin","Brake Parts","Precision-ground caliper slide guide pins with dust boots","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["brake-shoe-rear-drum","Brake Shoe – Rear Drum","Brake Parts","High-durability rear drum friction brake shoe set","https://images.unsplash.com/photo-1600705722908-bab1e75b4c4c?auto=format&fit=crop&w=700&q=80"],
-  ["brake-drum","Brake Drum","Brake Parts","Balanced heavy-duty cast iron rear wheel brake drum","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
-  ["wheel-cylinder","Wheel Cylinder","Brake Parts","Rear drum hydraulic wheel brake cylinder assembly","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["brake-master-cylinder","Brake Master Cylinder","Brake Parts","Dual-reservoir hydraulic brake master cylinder pump","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["brake-booster","Brake Booster","Brake Parts","Vacuum power brake servo booster diaphragm unit","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["brake-hose","Brake Hose","Brake Parts","Reinforced high-pressure hydraulic flexible brake line hose","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["brake-pipe","Brake Pipe","Brake Parts","Anti-corrosive metal hydraulic brake line hard pipe tubing","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
+  ["brake-pad-front","Brake Pad – Front","Brake Parts","High-friction ceramic front disc brake pad set","static/images/new/Brake Pad – Front.jpeg"],
+  ["brake-pad-rear","Brake Pad – Rear","Brake Parts","Precision rear axle disc brake pad set with noise reduction shims","static/images/new/Brake Pad – Rear.jpeg"],
+  ["brake-disc-rotor-front","Brake Disc / Rotor – Front","Brake Parts","Ventilated anti-fade front wheel brake rotor disc","static/images/new/Brake Disc  Rotor – Front.jpeg"],
+  ["brake-disc-rotor-rear","Brake Disc / Rotor – Rear","Brake Parts","Solid precision-machined rear brake rotor disc","static/images/new/Brake Disc  Rotor – Rear.jpeg"],
+  ["brake-caliper","Brake Caliper","Brake Parts","Hydraulic single / dual piston brake clamping caliper assembly","static/images/new/Brake Caliper.jpeg"],
+  ["brake-caliper-repair-kit","Brake Caliper Repair Kit","Brake Parts","Piston seals, boots, O-rings, and hardware overhaul kit","static/images/new/Brake Caliper Repair Kit.jpeg"],
+  ["caliper-slide-pin","Caliper Slide Pin / Guide Pin","Brake Parts","Precision-ground caliper slide guide pins with dust boots","static/images/new/Caliper Slide Pin  Guide Pin.jpeg"],
+  ["brake-shoe-rear-drum","Brake Shoe – Rear Drum","Brake Parts","High-durability rear drum friction brake shoe set","static/images/new/Brake Shoe – Rear Drum.jpeg"],
+  ["brake-drum","Brake Drum","Brake Parts","Balanced heavy-duty cast iron rear wheel brake drum","static/images/new/Brake Drum.jpeg"],
+  ["wheel-cylinder","Wheel Cylinder","Brake Parts","Rear drum hydraulic wheel brake cylinder assembly","static/images/new/Wheel Cylinder.jpeg"],
+  ["brake-master-cylinder","Brake Master Cylinder","Brake Parts","Dual-reservoir hydraulic brake master cylinder pump","static/images/new/Brake Master Cylinder.jpeg"],
+  ["brake-booster","Brake Booster","Brake Parts","Vacuum power brake servo booster diaphragm unit","static/images/new/Brake Booster.jpeg"],
+  ["brake-hose","Brake Hose","Brake Parts","Reinforced high-pressure hydraulic flexible brake line hose","static/images/new/Brake Hose.jpeg"],
+  ["brake-pipe","Brake Pipe","Brake Parts","Anti-corrosive metal hydraulic brake line hard pipe tubing","static/images/new/Brake Pipe.jpeg"],
   ["abs-wheel-speed-sensor","ABS Wheel Speed Sensor","Brake Parts","Magnetic anti-lock brake wheel speed sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
   ["brake-pad-wear-sensor","Brake Pad Wear Sensor","Brake Parts","Electric brake pad friction wear indicator wire sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
   ["brake-bleeder-screw","Brake Bleeder Screw","Brake Parts","High-strength caliper hydraulic air bleeder valve screw","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
@@ -647,7 +648,8 @@ function init(){
       const dealPrice = dealBtn.dataset.dealPrice || "";
       const dealMrp = dealBtn.dataset.dealMrp || "";
       const dealDiscount = dealBtn.dataset.dealDiscount || "";
-      const promoMsg = `Hello ${BUSINESS_NAME},\n\nI saw your Special Offer advertisement on your website:\n\n*PRODUCT:* ${partName}\n*OFFER DEAL PRICE:* ${dealPrice}${dealMrp ? ` (Regular MRP: ${dealMrp})` : ""}\n*DISCOUNT:* ${dealDiscount}\n\nI would like to know more about this product, vehicle compatibility for my car, and availability for doorstep delivery.\n\nThank you!`;
+      const priceText = dealPrice ? `\n*OFFER DEAL PRICE:* ${dealPrice}${dealMrp ? ` (Regular MRP: ${dealMrp})` : ""}` : "";
+      const promoMsg = `Hello ${BUSINESS_NAME},\n\nI saw your Special Offer advertisement on your website:\n\n*OFFER:* ${partName}${priceText}\n*BENEFIT / DISCOUNT:* ${dealDiscount}\n\nI would like to claim this offer and enquire about vehicle compatibility for my car and availability for doorstep service.\n\nThank you!`;
       const url = buildWhatsAppUrl(promoMsg, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
       if (url) {
         toast(`Opening WhatsApp for ${partName} offer...`);
