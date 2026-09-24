@@ -44,16 +44,16 @@ const parts = [
   // ==========================================
   // Car Accessories (114 Items)
   // ==========================================
-  ["car-body-cover","Car Body Cover","Car Exterior Accessories","All-weather waterproof UV protective full car body cover","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["sun-shade","Sun Shade","Car Exterior Accessories","Reflective foldable heat-blocking windshield sun shade","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["door-visor","Door Visor","Car Exterior Accessories","Aerodynamic rain guard door visors set","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80"],
-  ["door-edge-guard","Door Edge Guard","Car Exterior Accessories","Anti-scratch silicone car door edge protectors","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80"],
-  ["door-handle-cover","Door Handle Cover","Car Exterior Accessories","Stylized chrome / carbon finish door handle protector cup","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80"],
-  ["side-mirror-cover","Side Mirror Cover","Car Exterior Accessories","Aerodynamic side rear view mirror replacement cover","https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80"],
-  ["side-mirror-rain-guard","Side Mirror Rain Guard","Car Exterior Accessories","Flexible eyebrow rain shield for side mirrors","https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80"],
-  ["mud-flap","Mud Flap","Car Exterior Accessories","Heavy-duty splash guards mud flaps for wheels","https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80"],
-  ["number-plate-frame","Number Plate Frame","Car Exterior Accessories","Sleek anti-vibration license number plate frame","https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80"],
-  ["number-plate-cover","Number Plate Cover","Car Exterior Accessories","Crystal clear protective number plate shield","https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80"],
+  ["car-body-cover","Car Body Cover","Car Exterior Accessories","All-weather waterproof UV protective full car body cover","static/images/last/Car Body Cover.jpeg"],
+  ["sun-shade","Sun Shade","Car Exterior Accessories","Reflective foldable heat-blocking windshield sun shade","static/images/last/Sun Shade.jpeg"],
+  ["door-visor","Door Visor","Car Exterior Accessories","Aerodynamic rain guard door visors set","static/images/last/Door Visor.jpeg"],
+  ["door-edge-guard","Door Edge Guard","Car Exterior Accessories","Anti-scratch silicone car door edge protectors","static/images/last/Door Edge Guard.jpeg"],
+  ["door-handle-cover","Door Handle Cover","Car Exterior Accessories","Stylized chrome / carbon finish door handle protector cup","static/images/last/Door Handle Cover.jpeg"],
+  ["side-mirror-cover","Side Mirror Cover","Car Exterior Accessories","Aerodynamic side rear view mirror replacement cover","static/images/last/Side Mirror Cover.jpeg"],
+  ["side-mirror-rain-guard","Side Mirror Rain Guard","Car Exterior Accessories","Flexible eyebrow rain shield for side mirrors","static/images/last/Side Mirror Rain Guard.jpeg"],
+  ["mud-flap","Mud Flap","Car Exterior Accessories","Heavy-duty splash guards mud flaps for wheels","static/images/last/Mud Flap.jpeg"],
+  ["number-plate-frame","Number Plate Frame","Car Exterior Accessories","Sleek anti-vibration license number plate frame","static/images/last/Number Plate Frame.jpeg"],
+  ["number-plate-cover","Number Plate Cover","Car Exterior Accessories","Crystal clear protective number plate shield","static/images/last/Number Plate Cover.jpeg"],
   ["bumper-guard","Bumper Guard","Car Exterior Accessories","Front and rear heavy-duty bumper protection guard","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=700&q=80"],
   ["bumper-corner-guard","Bumper Corner Guard","Car Exterior Accessories","Anti-scratch rubber bumper corner protector strips","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=700&q=80"],
   ["body-side-moulding","Body Side Moulding","Car Exterior Accessories","Impact absorbing side door protective moulding beading","https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80"],
@@ -212,81 +212,81 @@ const parts = [
   ["intercooler","Intercooler","Air / Intake System","Intercooler unit","static/images/ew/Intercooler.jpeg"],
   ["turbocharger","Turbocharger","Air / Intake System","Turbocharger assembly","static/images/ew/Turbocharger.jpeg"],
   ["supercharger","Supercharger","Air / Intake System","Supercharger assembly","static/images/ew/Supercharger.jpeg"],
-  ["spark-plug","Spark Plug","Ignition System","Spark plug","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
+  ["spark-plug","Spark Plug","Ignition System","Spark plug","static/images/last/Spark Plug.jpeg"],
   ["ignition-coil","Ignition Coil","Ignition System","Ignition coil","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
-  ["coil-pack","Coil Pack","Ignition System","Ignition coil pack","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
-  ["spark-plug-wire","Spark Plug Wire","Ignition System","Spark plug lead","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
-  ["distributor","Distributor","Ignition System","Distributor assembly","https://images.unsplash.com/photo-1635784063385-3b2f7b1c0f75?auto=format&fit=crop&w=700&q=80"],
-  ["crankshaft-position-sensor","Crankshaft Position Sensor","Ignition System","Crank sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["camshaft-position-sensor","Camshaft Position Sensor","Ignition System","Cam sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["exhaust-manifold","Exhaust Manifold","Exhaust System","Exhaust manifold","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["exhaust-pipe","Exhaust Pipe","Exhaust System","Exhaust pipe","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["catalytic-converter","Catalytic Converter","Exhaust System","Catalytic converter","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["oxygen-sensor","Oxygen Sensor","Exhaust System","O2 sensor","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["egr-valve","EGR Valve","Exhaust System","EGR valve","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["egr-cooler","EGR Cooler","Exhaust System","EGR cooler","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["diesel-particulate-filter","Diesel Particulate Filter","Exhaust System","DPF filter","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["muffler","Muffler / Silencer","Exhaust System","Silent muffler","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["resonator","Resonator","Exhaust System","Exhaust resonator","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["radiator","Radiator","Cooling System","Car radiator","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["radiator-fan","Radiator Fan","Cooling System","Radiator cooling fan","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["water-pump","Water Pump","Cooling System","Coolant water pump","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["thermostat","Thermostat","Cooling System","Engine thermostat","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["thermostat-housing","Thermostat Housing","Cooling System","Thermostat housing","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["coolant-reservoir","Coolant Reservoir","Cooling System","Coolant tank","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["radiator-cap","Radiator Cap","Cooling System","Radiator cap","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["coolant-hose","Coolant Hose","Cooling System","Coolant hose","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["ect-sensor","Temperature Sensor","Cooling System","ECT sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["cooling-fan-motor","Cooling Fan Motor","Cooling System","Cooling fan motor","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["oil-pan","Oil Pan / Sump","Lubrication / Engine Oil System","Oil pan assembly","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["oil-pump","Oil Pump","Lubrication / Engine Oil System","Engine oil pump","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["oil-filter-2","Oil Filter","Lubrication / Engine Oil System","Oil filter cartridge","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["oil-pickup-tube","Oil Pickup Tube","Lubrication / Engine Oil System","Oil pickup tube","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["oil-pressure-sensor","Oil Pressure Sensor","Lubrication / Engine Oil System","Oil pressure sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["oil-cooler","Oil Cooler","Lubrication / Engine Oil System","Engine oil cooler","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["dipstick","Dipstick","Lubrication / Engine Oil System","Engine oil dipstick","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["oil-filler-cap","Oil Filler Cap","Lubrication / Engine Oil System","Oil filler cap","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["pcv-valve","PCV Valve","Lubrication / Engine Oil System","Positive crankcase ventilation valve","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["timing-chain-guide","Timing Chain Guide","Lubrication / Engine Oil System","Timing chain guide","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["timing-chain-tensioner","Timing Chain Tensioner","Lubrication / Engine Oil System","Chain tensioner","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["timing-belt-tensioner","Timing Belt Tensioner","Lubrication / Engine Oil System","Belt tensioner","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["camshaft-gear","Camshaft Gear / Sprocket","Lubrication / Engine Oil System","Camshaft gear","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["crankshaft-pulley","Crankshaft Pulley","Lubrication / Engine Oil System","Crankshaft pulley","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["vvt-solenoid","VVT Solenoid","Lubrication / Engine Oil System","Variable valve timing solenoid","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["vvt-actuator","VVT Actuator / Cam Phaser","Lubrication / Engine Oil System","Cam phaser actuator","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80"],
-  ["knock-sensor","Knock Sensor","Engine Sensors","Knock sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["fuel-pressure-sensor","Fuel Pressure Sensor","Engine Sensors","Fuel pressure sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["boost-pressure-sensor","Boost Pressure Sensor","Engine Sensors","Boost sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["egr-position-sensor","EGR Position Sensor","Engine Sensors","EGR position sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["starter-motor","Starter Motor","Engine Electrical Parts","Starter motor","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["alternator-part","Alternator","Engine Electrical Parts","Alternator unit","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["battery-part","Battery","Engine Electrical Parts","Car battery","https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=700&q=80"],
-  ["ecu","Engine Control Module","Engine Electrical Parts","ECU / ECM module","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["engine-wiring-harness","Engine Wiring Harness","Engine Electrical Parts","Wiring harness","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["fuses","Fuses","Engine Electrical Parts","Electrical fuses","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["relays","Relays","Engine Electrical Parts","Electrical relay","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["ground-cable","Ground Cable","Engine Electrical Parts","Ground cable","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["starter-solenoid","Starter Solenoid","Engine Electrical Parts","Starter solenoid","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["serpentine-belt","Serpentine Belt","Belts & External Engine Parts","Serpentine belt","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["drive-belt","Drive Belt","Belts & External Engine Parts","Drive belt","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["belt-tensioner","Belt Tensioner","Belts & External Engine Parts","Belt tensioner","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["idler-pulley","Idler Pulley","Belts & External Engine Parts","Idle pulley","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["crankshaft-pulley-2","Crankshaft Pulley","Belts & External Engine Parts","Crankshaft pulley","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["water-pump-pulley","Water Pump Pulley","Belts & External Engine Parts","Water pump pulley","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["alternator-pulley","Alternator Pulley","Belts & External Engine Parts","Alternator pulley","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["power-steering-pump","Power Steering Pump","Belts & External Engine Parts","Power steering pump","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["ac-compressor","AC Compressor","Belts & External Engine Parts","Air conditioning compressor","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["glow-plug","Glow Plug","Diesel Engine","Glow plug","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["glow-plug-relay","Glow Plug Relay","Diesel Engine","Glow plug relay","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["diesel-injector","Diesel Injector","Diesel Engine","Diesel injector","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["common-rail","Common Rail","Diesel Engine","Common rail system","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
+  ["coil-pack","Coil Pack","Ignition System","Ignition coil pack","static/images/last/Coil Pack.jpeg"],
+  ["spark-plug-wire","Spark Plug Wire","Ignition System","Spark plug lead","static/images/last/Spark Plug Wire.jpeg"],
+  ["distributor","Distributor","Ignition System","Distributor assembly","static/images/last/Distributor.jpeg"],
+  ["crankshaft-position-sensor","Crankshaft Position Sensor","Ignition System","Crank sensor","static/images/last/Crankshaft Position Sensor.jpeg"],
+  ["camshaft-position-sensor","Camshaft Position Sensor","Ignition System","Cam sensor","static/images/last/Camshaft Position Sensor.jpeg"],
+  ["exhaust-manifold","Exhaust Manifold","Exhaust System","Exhaust manifold","static/images/last/Exhaust Manifold.jpeg"],
+  ["exhaust-pipe","Exhaust Pipe","Exhaust System","Exhaust pipe","static/images/last/Exhaust Pipe.jpeg"],
+  ["catalytic-converter","Catalytic Converter","Exhaust System","Catalytic converter","static/images/last/Catalytic Converter.jpeg"],
+  ["oxygen-sensor","Oxygen Sensor","Exhaust System","O2 sensor","static/images/last/Oxygen Sensor.jpeg"],
+  ["egr-valve","EGR Valve","Exhaust System","EGR valve","static/images/last/EGR Valve.jpeg"],
+  ["egr-cooler","EGR Cooler","Exhaust System","EGR cooler","static/images/last/EGR Cooler.jpeg"],
+  ["diesel-particulate-filter","Diesel Particulate Filter","Exhaust System","DPF filter","static/images/last/Diesel Particulate Filter.jpeg"],
+  ["muffler","Muffler / Silencer","Exhaust System","Silent muffler","static/images/last/Muffler  Silencer.jpeg"],
+  ["resonator","Resonator","Exhaust System","Exhaust resonator","static/images/last/Resonator.jpeg"],
+  ["radiator","Radiator","Cooling System","Car radiator","static/images/last/Radiator.jpeg"],
+  ["radiator-fan","Radiator Fan","Cooling System","Radiator cooling fan","static/images/last/Radiator Fan.jpeg"],
+  ["water-pump","Water Pump","Cooling System","Coolant water pump","static/images/last/Water Pump.jpeg"],
+  ["thermostat","Thermostat","Cooling System","Engine thermostat","static/images/last/Thermostat.jpeg"],
+  ["thermostat-housing","Thermostat Housing","Cooling System","Thermostat housing","static/images/last/Thermostat Housing.jpeg"],
+  ["coolant-reservoir","Coolant Reservoir","Cooling System","Coolant tank","static/images/last/Coolant Reservoir.jpeg"],
+  ["radiator-cap","Radiator Cap","Cooling System","Radiator cap","static/images/last/Radiator Cap.jpeg"],
+  ["coolant-hose","Coolant Hose","Cooling System","Coolant hose","static/images/last/Coolant Hose.jpeg"],
+  ["ect-sensor","Temperature Sensor","Cooling System","ECT sensor","static/images/last/Temperature Sensor.jpeg"],
+  ["cooling-fan-motor","Cooling Fan Motor","Cooling System","Cooling fan motor","static/images/last/Cooling Fan Motor.jpeg"],
+  ["oil-pan","Oil Pan / Sump","Lubrication / Engine Oil System","Oil pan assembly","static/images/last/Oil Pan  Sump.jpeg"],
+  ["oil-pump","Oil Pump","Lubrication / Engine Oil System","Engine oil pump","static/images/last/Oil Pump.jpeg"],
+  ["oil-filter-2","Oil Filter","Lubrication / Engine Oil System","Oil filter cartridge","static/images/last/Oil Filter.jpeg"],
+  ["oil-pickup-tube","Oil Pickup Tube","Lubrication / Engine Oil System","Oil pickup tube","static/images/last/Oil Pickup Tube.jpeg"],
+  ["oil-pressure-sensor","Oil Pressure Sensor","Lubrication / Engine Oil System","Oil pressure sensor","static/images/last/Oil Pressure Sensor.jpeg"],
+  ["oil-cooler","Oil Cooler","Lubrication / Engine Oil System","Engine oil cooler","static/images/last/Oil Cooler.jpeg"],
+  ["dipstick","Dipstick","Lubrication / Engine Oil System","Engine oil dipstick","static/images/last/Dipstick.jpeg"],
+  ["oil-filler-cap","Oil Filler Cap","Lubrication / Engine Oil System","Oil filler cap","static/images/last/Oil Filler Cap.jpeg"],
+  ["pcv-valve","PCV Valve","Lubrication / Engine Oil System","Positive crankcase ventilation valve","static/images/last/PCV Valve.jpeg"],
+  ["timing-chain-guide","Timing Chain Guide","Lubrication / Engine Oil System","Timing chain guide","static/images/last/Timing Chain Guide.jpeg"],
+  ["timing-chain-tensioner","Timing Chain Tensioner","Lubrication / Engine Oil System","Chain tensioner","static/images/last/Timing Chain Tensioner.jpeg"],
+  ["timing-belt-tensioner","Timing Belt Tensioner","Lubrication / Engine Oil System","Belt tensioner","static/images/last/Timing Belt Tensioner.jpeg"],
+  ["camshaft-gear","Camshaft Gear / Sprocket","Lubrication / Engine Oil System","Camshaft gear","static/images/last/Camshaft Gear  Sprocket.jpeg"],
+  ["crankshaft-pulley","Crankshaft Pulley","Lubrication / Engine Oil System","Crankshaft pulley","static/images/last/Crankshaft Pulley.jpeg"],
+  ["vvt-solenoid","VVT Solenoid","Lubrication / Engine Oil System","Variable valve timing solenoid","static/images/last/VVT Solenoid.jpeg"],
+  ["vvt-actuator","VVT Actuator / Cam Phaser","Lubrication / Engine Oil System","Cam phaser actuator","static/images/last/VVT Actuator  Cam Phaser.jpeg"],
+  ["knock-sensor","Knock Sensor","Engine Sensors","Knock sensor","static/images/last/Knock Sensor.jpeg"],
+  ["fuel-pressure-sensor","Fuel Pressure Sensor","Engine Sensors","Fuel pressure sensor","static/images/last/Fuel Pressure Sensor.jpeg"],
+  ["boost-pressure-sensor","Boost Pressure Sensor","Engine Sensors","Boost sensor","static/images/last/Boost Pressure Sensor.jpeg"],
+  ["egr-position-sensor","EGR Position Sensor","Engine Sensors","EGR position sensor","static/images/last/EGR Position Sensor.jpeg"],
+  ["starter-motor","Starter Motor","Engine Electrical Parts","Starter motor","static/images/last/Starter Motor.jpeg"],
+  ["alternator-part","Alternator","Engine Electrical Parts","Alternator unit","static/images/last/Alternator.jpeg"],
+  ["battery-part","Battery","Engine Electrical Parts","Car battery","static/images/last/Battery.jpeg"],
+  ["ecu","Engine Control Module","Engine Electrical Parts","ECU / ECM module","static/images/last/Engine Control Module.jpeg"],
+  ["engine-wiring-harness","Engine Wiring Harness","Engine Electrical Parts","Wiring harness","static/images/last/Engine Wiring Harness.jpeg"],
+  ["fuses","Fuses","Engine Electrical Parts","Electrical fuses","static/images/last/Fuses.jpeg"],
+  ["relays","Relays","Engine Electrical Parts","Electrical relay","static/images/last/Relays.jpeg"],
+  ["ground-cable","Ground Cable","Engine Electrical Parts","Ground cable","static/images/last/Ground Cable.jpeg"],
+  ["starter-solenoid","Starter Solenoid","Engine Electrical Parts","Starter solenoid","static/images/last/Starter Solenoid.jpeg"],
+  ["serpentine-belt","Serpentine Belt","Belts & External Engine Parts","Serpentine belt","static/images/last/Serpentine Belt.jpeg"],
+  ["drive-belt","Drive Belt","Belts & External Engine Parts","Drive belt","static/images/last/Drive Belt.jpeg"],
+  ["belt-tensioner","Belt Tensioner","Belts & External Engine Parts","Belt tensioner","static/images/last/Belt Tensioner.jpeg"],
+  ["idler-pulley","Idler Pulley","Belts & External Engine Parts","Idle pulley","static/images/last/Idler Pulley.jpeg"],
+  ["crankshaft-pulley-2","Crankshaft Pulley","Belts & External Engine Parts","Crankshaft pulley","static/images/last/Crankshaft Pulley.jpeg"],
+  ["water-pump-pulley","Water Pump Pulley","Belts & External Engine Parts","Water pump pulley","static/images/last/Water Pump Pulley.jpeg"],
+  ["alternator-pulley","Alternator Pulley","Belts & External Engine Parts","Alternator pulley","static/images/last/Alternator Pulley.jpeg"],
+  ["power-steering-pump","Power Steering Pump","Belts & External Engine Parts","Power steering pump","static/images/last/Power Steering Pump.jpeg"],
+  ["ac-compressor","AC Compressor","Belts & External Engine Parts","Air conditioning compressor","static/images/last/AC Compressor.jpeg"],
+  ["glow-plug","Glow Plug","Diesel Engine","Glow plug","static/images/last/Glow Plug.jpeg"],
+  ["glow-plug-relay","Glow Plug Relay","Diesel Engine","Glow plug relay","static/images/last/Glow Plug Relay.jpeg"],
+  ["diesel-injector","Diesel Injector","Diesel Engine","Diesel injector","static/images/last/Diesel Injector.jpeg"],
+  ["common-rail","Common Rail","Diesel Engine","Common rail system","static/images/last/Common Rail.jpeg"],
   ["diesel-high-pressure-fuel-pump","High Pressure Fuel Pump","Diesel Engine","Diesel high pressure pump","static/images/High Pressure Fuel Pump (GDIDiesel.jpeg"],
   ["diesel-turbocharger","Turbocharger","Diesel Engine","Diesel turbocharger","static/images/ew/Turbocharger.jpeg"],
   ["diesel-intercooler","Intercooler","Diesel Engine","Diesel intercooler","static/images/ew/Intercooler.jpeg"],
-  ["diesel-dpf","DPF","Diesel Engine","Diesel particulate filter","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["diesel-oxidation-catalyst","Diesel Oxidation Catalyst","Diesel Engine","DOC catalytic converter","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
-  ["nox-sensor","NOx Sensor","Diesel Engine","NOx sensor","https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=80"],
-  ["adblue-def-system","AdBlue / DEF System","Diesel Engine","DEF / AdBlue system","https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"],
+  ["diesel-dpf","DPF","Diesel Engine","Diesel particulate filter","static/images/last/DPF.jpeg"],
+  ["diesel-oxidation-catalyst","Diesel Oxidation Catalyst","Diesel Engine","DOC catalytic converter","static/images/last/Diesel Oxidation Catalyst.jpeg"],
+  ["nox-sensor","NOx Sensor","Diesel Engine","NOx sensor","static/images/last/NOx Sensor.jpeg"],
+  ["adblue-def-system","AdBlue / DEF System","Diesel Engine","DEF / AdBlue system","static/images/last/AdBlue  DEF System.jpeg"],
   // ==========================================
   // Brake Parts (20 Items)
   // ==========================================
@@ -314,18 +314,18 @@ const parts = [
   // ==========================================
   // STEERING & POWER STEERING (8 Items)
   // ==========================================
-  ["steering-wheel-column","Steering Wheel & Column","Steering & Power Steering","Telescopic steering column assembly with angle sensor","https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=700&q=80"],
-  ["steering-rack-pinion","Steering Rack & Pinion","Steering & Power Steering","Complete hydraulic / electronic steering rack and pinion assembly","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["tie-rod-rack-end","Tie Rod & Rack End","Steering & Power Steering","Inner tie rod and outer steering tie rod end set","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["steering-knuckle-ball-joint","Steering Knuckle & Ball Joint","Steering & Power Steering","Forged suspension steering knuckle and lower ball joint","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
-  ["hydraulic-power-steering","Hydraulic Power Steering","Steering & Power Steering","Hydraulic power steering pump, fluid lines, and reservoir","https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80"],
-  ["electric-power-steering-eps","Electric Power Steering (EPS)","Steering & Power Steering","Electric steering assist motor and column ECU controller","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80"],
-  ["steering-mounting-bush","Steering Mounting & Bush","Steering & Power Steering","Heavy-duty rubber and polyurethane steering rack mounting bush","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
-  ["steering-repair-kits","Steering Repair Kits","Steering & Power Steering","Steering rack oil seal kit, boots, clamps, and overhaul parts","https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=700&q=80"],
+  ["steering-wheel-column","Steering Wheel & Column","Steering & Power Steering","Telescopic steering column assembly with angle sensor","static/images/last/Steering Wheel & Column.jpeg"],
+  ["steering-rack-pinion","Steering Rack & Pinion","Steering & Power Steering","Complete hydraulic / electronic steering rack and pinion assembly","static/images/last/Steering Rack & Pinion.jpeg"],
+  ["tie-rod-rack-end","Tie Rod & Rack End","Steering & Power Steering","Inner tie rod and outer steering tie rod end set","static/images/last/Tie Rod & Rack End.jpeg"],
+  ["steering-knuckle-ball-joint","Steering Knuckle & Ball Joint","Steering & Power Steering","Forged suspension steering knuckle and lower ball joint","static/images/last/Steering Knuckle & Ball Joint.jpeg"],
+  ["hydraulic-power-steering","Hydraulic Power Steering","Steering & Power Steering","Hydraulic power steering pump, fluid lines, and reservoir","static/images/last/Hydraulic Power Steering.jpeg"],
+  ["electric-power-steering-eps","Electric Power Steering (EPS)","Steering & Power Steering","Electric steering assist motor and column ECU controller","static/images/last/Electric Power Steering (EPS).jpeg"],
+  ["steering-mounting-bush","Steering Mounting & Bush","Steering & Power Steering","Heavy-duty rubber and polyurethane steering rack mounting bush","static/images/last/Steering Mounting & Bush.jpeg"],
+  ["steering-repair-kits","Steering Repair Kits","Steering & Power Steering","Steering rack oil seal kit, boots, clamps, and overhaul parts","static/images/last/Steering Repair Kits.jpeg"],
 
-  ["shock","Shock Absorber","Suspension","Suspension component","https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80"],
-  ["clutch","Clutch Kit","Other","Clutch replacement kit","https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=80"],
-  ["headlight","Headlight","Other","Headlamp replacement","https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=700&q=80"]
+  ["shock","Shock Absorber","Suspension","Suspension component","static/images/last/Shock Absorber.jpeg"],
+  ["clutch","Clutch Kit","Other","Clutch replacement kit","static/images/last/Clutch Kit.jpeg"],
+  ["headlight","Headlight","Other","Headlamp replacement","static/images/last/Headlight.jpeg"]
 ];
 
 const state = {brand:"", model:"", year:"", services:new Set(), parts:new Set(), location:"Home", coordinates:null};
@@ -398,10 +398,23 @@ function openWhatsApp(url){
 
 function getPartVisual(p){
   const categoryIcon = partCategoryIcons[p[2]] || "🧰";
+  const isSelected = state.parts.has(p[0]);
   return `
-    <div class="part-visual">
-      <img class="part-img" src="${p[4]}" alt="${p[1]}" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('fallback');">
-      <div class="part-icon-badge">${categoryIcon}</div>
+    <div class="part-media-wrap">
+      <img class="part-img" src="${p[4]}" alt="${p[1]}" loading="lazy" onerror="this.style.display='none'; this.closest('.part-media-wrap').classList.add('fallback');">
+      <div class="part-card-fallback-art">${categoryIcon}</div>
+      <div class="part-card-scrim"></div>
+      <div class="part-card-top-bar">
+        <span class="part-cat-badge">${categoryIcon} <span>${p[2]}</span></span>
+        <button type="button" class="select-part ${isSelected ? "selected" : ""}" data-part="${p[0]}" aria-label="Select ${p[1]}">
+          <span class="sel-icon">${isSelected ? "✓" : "+"}</span>
+          <span class="sel-text">${isSelected ? "Selected" : "Select Part"}</span>
+        </button>
+      </div>
+      <div class="part-card-bottom-info">
+        <b class="part-title">${p[1]}</b>
+        <p class="part-desc">${p[3]}</p>
+      </div>
     </div>
   `;
 }
@@ -446,9 +459,8 @@ function renderParts(){
     return matchesQuery && matchesCategory;
   });
 
-  $("partsGrid").innerHTML=filtered.map(p=>`<article class="part-card ${state.parts.has(p[0])?"selected":""}">
+  $("partsGrid").innerHTML=filtered.map(p=>`<article class="part-card ${state.parts.has(p[0])?"selected":""}" data-part="${p[0]}">
     ${getPartVisual(p)}
-    <div class="part-info"><small>${p[2]}</small><b>${p[1]}</b><p>${p[3]}</p><button class="select-part" data-part="${p[0]}">${state.parts.has(p[0])?"✓ Selected":"Select Part"}</button></div>
   </article>`).join("") || `<p style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: #747a80;">No spare parts or accessories found matching your search.</p>`;
 }
 function togglePart(id){state.parts.has(id)?state.parts.delete(id):state.parts.add(id);renderParts();updateSummary();}
