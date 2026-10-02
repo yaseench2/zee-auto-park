@@ -99,7 +99,7 @@ const parts = [
   ["car-stereo","Car Stereo","Mobile & Electronics","Single & Double DIN Bluetooth automotive audio receiver","static/images/FINAL/Car Stereo.jpeg"],
   ["android-car-player","Android Car Player","Mobile & Electronics","Smart Android touchscreen media player with GPS & WiFi","static/images/FINAL/Android Car Player.jpeg"],
   ["touchscreen-display","Touchscreen Display","Mobile & Electronics","HD IPS wireless Apple CarPlay & Android Auto display","static/images/FINAL/Touchscreen Display.jpeg"],
-  ["dashboard-display","Dashboard Display","Mobile & Electronics","HD smart touchscreen dashboard infotainment display with navigation & Apple CarPlay","static/images/offer/Dashboard Display.jpeg"],
+  ["dashboard-display","Dashboard Display","Mobile & Electronics","HD smart touchscreen dashboard infotainment display with navigation & Apple CarPlay","static/images/FINAL/Touchscreen Display.jpeg"],
   ["reverse-camera","Reverse Camera","Mobile & Electronics","Wide-angle HD night vision waterproof rear backup camera","static/images/FINAL/Reverse Camera.jpeg"],
   ["360-camera","360° Camera","Mobile & Electronics","Full 360-degree bird's-eye surround view camera system","static/images/FINAL/360° Camera.jpeg"],
   ["parking-sensor","Parking Sensor","Mobile & Electronics","Ultrasonic reverse parking radar sensors with LED display","static/images/FINAL/Parking Sensor.jpeg"],
