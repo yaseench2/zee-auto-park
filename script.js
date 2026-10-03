@@ -841,6 +841,37 @@ function init(){
     },()=>toast("Could not get your location. Please enter it manually."));
   });
 
+  // Deals urgency countdown timer
+  function initDealsCountdown() {
+    const hoursEl = $("timerHours");
+    const minutesEl = $("timerMinutes");
+    const secondsEl = $("timerSeconds");
+    if (!hoursEl || !minutesEl || !secondsEl) return;
+
+    function updateTimer() {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0);
+      let diff = Math.floor((midnight - now) / 1000);
+      if (diff <= 0) {
+        midnight.setDate(midnight.getDate() + 1);
+        diff = Math.floor((midnight - now) / 1000);
+      }
+
+      const hours = Math.floor(diff / 3600);
+      const minutes = Math.floor((diff % 3600) / 60);
+      const seconds = diff % 60;
+
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
+  initDealsCountdown();
   renderBrands();renderServices();renderParts();updateSummary();updateProgressBar();
 }
 
