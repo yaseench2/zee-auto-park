@@ -27,17 +27,119 @@ const cars = {
 
 const brandIcons = {"Toyota":"T","Hyundai":"H","Honda":"H","Kia":"K","Maruti Suzuki":"M","Tata":"T","Mahindra":"M","Nissan":"N","Renault":"R","Volkswagen":"VW","Skoda":"S","Ford":"F","BMW":"BMW","Mercedes-Benz":"MB","Audi":"A"};
 
-const services = [
-  ["general-inspection","General Inspection","Check the overall condition of the vehicle","🔎"],
-  ["engine-diagnostics","Engine Diagnostics","Engine scan and fault diagnosis","⚙️"],
-  ["battery-service","Battery Service","Battery check and replacement","🔋"],
-  ["brake-service","Brake Service","Brake pads, discs and brake fluid check","🛑"],
-  ["ac-service","AC Service","Air conditioning inspection and repair","❄️"],
-  ["suspension-service","Suspension Service","Shock absorber and alignment support","🛞"],
-  ["oil-service","Oil & Filter Service","Engine oil change and filter replacement","🧴"],
-  ["electrical-fix","Electrical Repair","Wiring, lights, sensors and electrical faults","💡"],
-  ["tire-service","Tire & Wheel Service","Wheel balancing, puncture and fitting support","🏁"],
-  ["other-service","Other Repair","Custom repair or maintenance request","🛠️"]
+const categories = [
+  {
+    id: "brake-parts",
+    name: "Brake Parts",
+    desc: "Brake pads, discs, rotors, calipers and fluid lines",
+    icon: "🛑",
+    matchCats: ["Brake Parts", "Brake"]
+  },
+  {
+    id: "engine-mechanical",
+    name: "Engine & Mechanical",
+    desc: "Pistons, cylinder head, gaskets, timing belts & valves",
+    icon: "⚙️",
+    matchCats: ["Engine", "Belts & External Engine Parts", "Diesel Engine"]
+  },
+  {
+    id: "electrical-battery",
+    name: "Battery & Electrical",
+    desc: "Battery check & replacement, starter, alternator & relays",
+    icon: "🔋",
+    matchCats: ["Engine Electrical Parts", "Ignition System", "Engine Sensors"]
+  },
+  {
+    id: "suspension-steering",
+    name: "Suspension & Steering",
+    desc: "Shock absorbers, struts, steering rack & ball joints",
+    icon: "🛞",
+    matchCats: ["Suspension", "Steering & Power Steering"]
+  },
+  {
+    id: "cooling-ac",
+    name: "Cooling & AC System",
+    desc: "Air conditioning, radiator, water pump & thermostat",
+    icon: "❄️",
+    matchCats: ["Cooling System", "AC"]
+  },
+  {
+    id: "oil-lubrication",
+    name: "Oil & Lubrication",
+    desc: "Engine oil, oil filters, sump pan & fluid coolers",
+    icon: "🧴",
+    matchCats: ["Lubrication / Engine Oil System"]
+  },
+  {
+    id: "lighting-lamps",
+    name: "Lighting & Lamps",
+    desc: "LED headlights, fog lamps, DRL & ambient lights",
+    icon: "💡",
+    matchCats: ["Lighting Accessories"]
+  },
+  {
+    id: "fuel-intake",
+    name: "Fuel & Intake System",
+    desc: "Fuel pump, injectors, air filter & turbocharger",
+    icon: "⛽",
+    matchCats: ["Fuel System", "Air / Intake System"]
+  },
+  {
+    id: "exhaust-emission",
+    name: "Exhaust System",
+    desc: "Catalytic converters, exhaust pipes, mufflers & DPF",
+    icon: "💨",
+    matchCats: ["Exhaust System"]
+  },
+  {
+    id: "wheels-tyres",
+    name: "Wheels & Tyre Care",
+    desc: "Alloy wheels, wheel covers, tyre inflators & TPMS",
+    icon: "🏁",
+    matchCats: ["Wheels & Tyre Accessories"]
+  },
+  {
+    id: "exterior-accessories",
+    name: "Exterior Accessories",
+    desc: "Body covers, door visors, bumper guards & roof rails",
+    icon: "🚗",
+    matchCats: ["Car Exterior Accessories"]
+  },
+  {
+    id: "interior-accessories",
+    name: "Interior Accessories",
+    desc: "Seat covers, 7D floor mats, steering covers & cushions",
+    icon: "🛋️",
+    matchCats: ["Interior Accessories"]
+  },
+  {
+    id: "mobile-electronics",
+    name: "Electronics & Gadgets",
+    desc: "Android screens, dash cams, reverse cameras & chargers",
+    icon: "📱",
+    matchCats: ["Mobile & Electronics"]
+  },
+  {
+    id: "car-cleaning",
+    name: "Car Care & Cleaning",
+    desc: "Microfiber cloths, polish, wax, vacuum & wash kits",
+    icon: "🧼",
+    matchCats: ["Car Cleaning Accessories"]
+  },
+  {
+    id: "emergency-utility",
+    name: "Emergency & Utility",
+    desc: "Jump starters, jacks, tool kits, tow ropes & safety kits",
+    icon: "🛠️",
+    matchCats: ["Emergency / Utility Accessories"]
+  },
+  {
+    id: "all",
+    name: "All Spare Parts",
+    desc: "Browse our complete catalog of 200+ genuine parts",
+    icon: "✨",
+    matchCats: ["all"]
+  }
 ];
 
 const parts = [
@@ -329,7 +431,17 @@ const parts = [
   ["headlight","Headlight","Other","Headlamp replacement","static/images/last/Headlight.jpeg"]
 ];
 
-const state = {brand:"", model:"", year:"", services:new Set(), parts:new Set(), location:"Home", coordinates:null};
+const state = {
+  brand: "",
+  model: "",
+  year: "",
+  category: null,
+  categoryName: "",
+  parts: new Set(),
+  customPart: "",
+  city: ""
+};
+
 const partCategoryIcons = {
   // Car Accessories
   "Car Exterior Accessories": "🚗",
@@ -360,8 +472,15 @@ const partCategoryIcons = {
 };
 
 const $ = id => document.getElementById(id);
-const toast = msg => { $("toast").textContent=msg; $("toast").classList.add("show"); setTimeout(()=> $("toast").classList.remove("show"),2600); };
-function normalizeWhatsAppNumber(raw, defaultCountryCode = "91"){
+const toast = msg => {
+  const t = $("toast");
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2600);
+};
+
+function normalizeWhatsAppNumber(raw, defaultCountryCode = "91") {
   let digits = String(raw || "").replace(/\D/g, "");
   if (!digits) return "";
   digits = digits.replace(/^0+/, "");
@@ -374,13 +493,13 @@ function normalizeWhatsAppNumber(raw, defaultCountryCode = "91"){
   return digits;
 }
 
-function buildWhatsAppUrl(message, rawNumber, defaultCountryCode = "91"){
+function buildWhatsAppUrl(message, rawNumber, defaultCountryCode = "91") {
   const number = normalizeWhatsAppNumber(rawNumber, defaultCountryCode);
   if (!number) return "";
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
-function openWhatsApp(url){
+function openWhatsApp(url) {
   if (!url) return;
   try {
     const win = window.open(url, "_blank");
@@ -392,7 +511,7 @@ function openWhatsApp(url){
   }
 }
 
-function getPartVisual(p){
+function getPartVisual(p) {
   const categoryIcon = partCategoryIcons[p[2]] || "🧰";
   const isSelected = state.parts.has(p[0]);
   const safeImgSrc = encodeURI(p[4]);
@@ -403,10 +522,15 @@ function getPartVisual(p){
       <div class="part-card-scrim"></div>
       <div class="part-card-top-bar">
         <span class="part-cat-badge">${categoryIcon} <span>${p[2]}</span></span>
-        <button type="button" class="select-part ${isSelected ? "selected" : ""}" data-part="${p[0]}" aria-label="Select ${p[1]}">
-          <span class="sel-icon">${isSelected ? "✓" : "+"}</span>
-          <span class="sel-text">${isSelected ? "Selected" : "Select Part"}</span>
-        </button>
+        <div class="part-actions-row">
+          <button type="button" class="select-part ${isSelected ? "selected" : ""}" data-part="${p[0]}" aria-label="Select ${p[1]}">
+            <span class="sel-icon">${isSelected ? "✓" : "+"}</span>
+            <span class="sel-text">${isSelected ? "Selected" : "Select"}</span>
+          </button>
+          <button type="button" class="part-direct-wa-btn" data-direct-part="${p[0]}" title="Instant WhatsApp Enquiry for this part">
+            <span>💬 Enquire</span>
+          </button>
+        </div>
       </div>
       <div class="part-card-bottom-info">
         <b class="part-title">${p[1]}</b>
@@ -416,273 +540,343 @@ function getPartVisual(p){
   `;
 }
 
-function renderBrands(){
-  $("brands").innerHTML = Object.keys(cars).map(brand =>
-    `<button class="brand ${state.brand===brand?"active":""}" data-brand="${brand}"><span class="brand-logo">${brandIcons[brand]||"🚗"}</span>${brand}</button>`
+function renderBrands() {
+  const brandsEl = $("brands");
+  if (!brandsEl) return;
+  brandsEl.innerHTML = Object.keys(cars).map(brand =>
+    `<button class="brand ${state.brand === brand ? "active" : ""}" data-brand="${brand}"><span class="brand-logo">${brandIcons[brand] || "🚗"}</span>${brand}</button>`
   ).join("");
 }
-function selectBrand(brand){
-  state.brand=brand; state.model=""; state.year="";
+
+function selectBrand(brand) {
+  state.brand = brand;
+  state.model = "";
+  state.year = "";
   renderBrands();
-  $("modelSelect").innerHTML=`<option value="">Choose a ${brand} model</option>`+cars[brand].map(m=>`<option value="${m}">${m}</option>`).join("");
-  $("selectedCar").textContent=`${brand} — choose a model`;
+
+  if ($("modelSelect")) {
+    $("modelSelect").innerHTML = `<option value="">Choose a ${brand} model</option>` + cars[brand].map(m => `<option value="${m}">${m}</option>`).join("");
+  }
+  if ($("selectedCar")) {
+    $("selectedCar").textContent = `🚗 Selected: ${brand} — choose model`;
+  }
   updateSummary();
 }
-function renderServices(){
-  $("servicesGrid").innerHTML = services.map(([id, name, desc, icon]) => `
-    <button class="service-card ${state.services.has(id)?"selected":""}" data-service="${id}">
-      <div class="service-icon">${icon}</div>
-      <b>${name}</b>
-      <small>${desc}</small>
-    </button>
-  `).join("");
+
+function renderCategories() {
+  const grid = $("categoryGrid");
+  if (!grid) return;
+  grid.innerHTML = categories.map(cat => {
+    const isSelected = state.category === cat.id;
+    return `
+      <div class="category-card ${isSelected ? "selected" : ""}" data-category-id="${cat.id}">
+        <div class="category-icon">${cat.icon}</div>
+        <b>${cat.name}</b>
+        <small>${cat.desc}</small>
+      </div>
+    `;
+  }).join("");
 }
-function toggleService(id){state.services.has(id)?state.services.delete(id):state.services.add(id);renderServices();updateSummary();}
-function selectedServiceNames(){return services.filter(([id]) => state.services.has(id)).map(([, name]) => name);}
 
-function renderParts(){
-  const q=$("partSearch").value.trim().toLowerCase();
-  const cat=$("partCategory").value;
+function selectCategory(catId, smoothScroll = true) {
+  const found = categories.find(c => c.id === catId);
+  if (!found) return;
 
-  if (!q && cat === "none") {
-    $("partsGrid").innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: #747a80;">Search for a part or accessory, or choose a category to view available items.</p>`;
+  state.category = found.id;
+  state.categoryName = found.name;
+
+  // Update category card selected UI matching user screenshot
+  document.querySelectorAll(".category-card").forEach(card => {
+    card.classList.toggle("selected", card.dataset.categoryId === found.id);
+  });
+
+  // Hide prompt notice and reveal category action bar
+  if ($("categoryPromptBox")) {
+    $("categoryPromptBox").classList.add("hidden");
+  }
+  if ($("categoryActionBar")) {
+    $("categoryActionBar").classList.remove("hidden");
+  }
+
+  // Reveal spare parts section
+  const partsSec = $("parts");
+  if (partsSec) {
+    partsSec.classList.remove("parts-locked");
+  }
+
+  // Sync toolbar dropdown if present
+  if ($("partCategory")) {
+    $("partCategory").value = found.id;
+  }
+
+  // Update category action bar
+  if ($("activeCategoryName")) {
+    $("activeCategoryName").textContent = found.name;
+  }
+
+  // Update parts section subheading
+  if ($("partsSubtitle")) {
+    $("partsSubtitle").innerHTML = `Showing genuine spare parts for <strong>${found.name}</strong>. Pick the parts you need or chat directly on WhatsApp.`;
+  }
+
+  renderParts();
+  updateSummary();
+
+  if (smoothScroll && partsSec) {
+    partsSec.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function isPartInCategory(part, catId) {
+  if (!catId) return false;
+  if (catId === "all") return true;
+  const catObj = categories.find(c => c.id === catId);
+  if (!catObj) return true;
+  if (catObj.matchCats.includes("all")) return true;
+  const partCat = part[2].toLowerCase();
+  return catObj.matchCats.some(m => m.toLowerCase() === partCat);
+}
+
+function renderParts() {
+  const partsSec = $("parts");
+  const partsGrid = $("partsGrid");
+  if (!partsGrid) return;
+
+  // IMPORTANT: Spare parts list only show after selecting category
+  if (!state.category) {
+    if (partsSec) partsSec.classList.add("parts-locked");
+    partsGrid.innerHTML = "";
     return;
   }
 
-  const filtered=parts.filter(p => {
+  if (partsSec) {
+    partsSec.classList.remove("parts-locked");
+  }
+
+  const q = $("partSearch") ? $("partSearch").value.trim().toLowerCase() : "";
+
+  const filtered = parts.filter(p => {
     const text = (p[1] + " " + p[2] + " " + p[3]).toLowerCase();
     const matchesQuery = !q || text.includes(q);
-    const matchesCategory = cat === "all" || cat === "none" || p[2] === cat || (cat === "Brake" && p[2] === "Brake Parts") || (cat === "Brake Parts" && p[2] === "Brake");
+    const matchesCategory = isPartInCategory(p, state.category);
     return matchesQuery && matchesCategory;
   });
 
-  $("partsGrid").innerHTML=filtered.map(p=>`<article class="part-card ${state.parts.has(p[0])?"selected":""}" data-part="${p[0]}">
-    ${getPartVisual(p)}
-  </article>`).join("") || `<p style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: #747a80;">No spare parts or accessories found matching your search.</p>`;
+  if ($("activeCategoryCount")) {
+    $("activeCategoryCount").textContent = `(${filtered.length} Items Available)`;
+  }
+
+  partsGrid.innerHTML = filtered.map(p => `
+    <article class="part-card ${state.parts.has(p[0]) ? "selected" : ""}" data-part-card="${p[0]}">
+      ${getPartVisual(p)}
+    </article>
+  `).join("") || `<p style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: #747a80;">No spare parts found matching "${q}" in ${state.categoryName}. You can type custom requirements below or search across all categories.</p>`;
 }
-function togglePart(id){state.parts.has(id)?state.parts.delete(id):state.parts.add(id);renderParts();updateSummary();}
-function selectedPartNames(){return parts.filter(p=>state.parts.has(p[0])).map(p=>p[1]);}
-function updateProgressBar(){
-  const hasVehicle = Boolean(state.brand && state.model);
-  const hasNeeds = Boolean(state.services.size > 0 || state.parts.size > 0);
-  const hasLocation = Boolean(getValue("address").length > 3);
-  const normalizedPhone = normalizeWhatsAppNumber(getValue("phone"));
-  const hasContact = Boolean(getValue("name").length > 1 && normalizedPhone.length >= 8);
-  const isSpecificSchedule = $("bookSpecificSchedule") && $("bookSpecificSchedule").checked;
-  const hasScheduleOrReview = isSpecificSchedule
-    ? Boolean(getValue("date") || getValue("time") || getValue("notes") || (hasVehicle && hasNeeds && hasLocation && hasContact))
-    : true;
 
-  let score = 0;
-  if (hasVehicle) score += 20;
-  if (hasNeeds) score += 20;
-  if (hasLocation) score += 20;
-  if (hasContact) score += 20;
-  if (hasScheduleOrReview) score += 20;
-
-  const pct = Math.min(100, score);
-
-  const fill = $("progressFillBar");
-  if (fill) fill.style.width = pct + "%";
-  const stickyBar = $("formProgressBar");
-  if (stickyBar) stickyBar.style.width = pct + "%";
-
-  const badge = $("progressPercentBadge");
-  if (badge) badge.textContent = pct + "% Completed";
-
-  const statusTitle = $("progressStatusText");
-  const hint = $("progressHintText");
-
-  if (pct === 0) {
-    if (statusTitle) statusTitle.textContent = "Request Progress: 0%";
-    if (hint) hint.textContent = "Select your vehicle & requirements to begin";
-  } else if (pct < 40) {
-    if (statusTitle) statusTitle.textContent = "Vehicle Selected · " + pct + "%";
-    if (hint) hint.textContent = "Choose repair service or spare parts needed";
-  } else if (pct < 60) {
-    if (statusTitle) statusTitle.textContent = "Vehicle & Needs Added · " + pct + "%";
-    if (hint) hint.textContent = "Set your service location or use GPS";
-  } else if (pct < 80) {
-    if (statusTitle) statusTitle.textContent = "Location Set · " + pct + "%";
-    if (hint) hint.textContent = "Enter your contact name & WhatsApp number";
-  } else if (pct < 100) {
-    if (statusTitle) statusTitle.textContent = "Almost Complete! · " + pct + "%";
-    if (hint) hint.textContent = "Add preferred timing or review your request";
+function togglePart(id) {
+  if (state.parts.has(id)) {
+    state.parts.delete(id);
   } else {
-    if (statusTitle) statusTitle.textContent = "Ready to Dispatch · 100% ✨";
-    if (hint) hint.textContent = "Everything looks great! Click Send on WhatsApp";
+    state.parts.add(id);
+  }
+  renderParts();
+  updateSummary();
+}
+
+function selectedPartNames() {
+  return parts.filter(p => state.parts.has(p[0])).map(p => p[1]);
+}
+
+function directPartWhatsApp(partId) {
+  const part = parts.find(p => p[0] === partId);
+  if (!part) return;
+
+  const carText = state.brand
+    ? `${state.brand} ${state.model || ""}${state.year ? " (" + state.year + ")" : ""}`.trim()
+    : "Not specified yet (Please advise fitment)";
+
+  const msg = `*SPARE PART ENQUIRY*\n*${BUSINESS_NAME}*\n\n` +
+    `🚗 *VEHICLE:* ${carText}\n` +
+    `⚙️ *PART REQUESTED:* ${part[1]}\n` +
+    `📦 *CATEGORY:* ${part[2]}\n` +
+    `ℹ️ *SPECIFICATION:* ${part[3]}\n\n` +
+    `_Hello Zee Auto Park! Is this part currently available for my car? Please share price and doorstep delivery details. Thank you!_`;
+
+  const url = buildWhatsAppUrl(msg, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+  if (url) {
+    toast(`Opening WhatsApp for ${part[1]}...`);
+    openWhatsApp(url);
   }
 }
 
-function updateSummary(){
-  const car=state.brand?(state.model?`${state.brand} ${state.model}${state.year?" ("+state.year+")":""}`:`${state.brand} — model not selected`):"Not selected";
-  const servicesText = selectedServiceNames().join(", ") || "None selected";
-  const partsText = selectedPartNames().join(", ") || "None selected";
-  $("sumCar").textContent=car;
-  $("sumParts").textContent=partsText;
-  $("sumLocation").textContent=state.location;
-  const sumService = document.getElementById("sumService");
-  if (sumService) {
-    sumService.textContent = servicesText;
+function directCategoryWhatsApp() {
+  const carText = state.brand
+    ? `${state.brand} ${state.model || ""}${state.year ? " (" + state.year + ")" : ""}`.trim()
+    : "Not specified yet";
+
+  const catText = state.categoryName || "Spare Parts";
+  const msg = `*SPARE PARTS CATEGORY ENQUIRY*\n*${BUSINESS_NAME}*\n\n` +
+    `🚗 *VEHICLE:* ${carText}\n` +
+    `📦 *CATEGORY:* ${catText}\n\n` +
+    `_Hello Zee Auto Park! I would like to enquire about available spare parts in the ${catText} category for my car. Please share options and prices. Thank you!_`;
+
+  const url = buildWhatsAppUrl(msg, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+  if (url) {
+    toast(`Opening WhatsApp for ${catText}...`);
+    openWhatsApp(url);
   }
-  const sumSchedule = document.getElementById("sumSchedule");
-  if (sumSchedule) {
-    const isSpecific = $("bookSpecificSchedule") && $("bookSpecificSchedule").checked;
-    if (!isSpecific) {
-      sumSchedule.innerHTML = `<span class="badge-urgent-tag">🚨 Urgent</span> Immediate / ASAP Service`;
-    } else {
-      const d = $("date") ? $("date").value : "";
-      const t = $("time") ? $("time").value : "";
-      if (d || t) {
-        sumSchedule.textContent = `${d || "Flexible date"} · ${t || "Flexible time"}`;
-      } else {
-        sumSchedule.textContent = "Preferred Date & Time (Flexible)";
-      }
+}
+
+function updateSummary() {
+  const car = state.brand
+    ? (state.model ? `${state.brand} ${state.model}${state.year ? " (" + state.year + ")" : ""}` : `${state.brand} — model not selected`)
+    : "No vehicle selected";
+
+  const partsList = selectedPartNames();
+  const partsCount = partsList.length;
+  const partsText = partsCount > 0
+    ? partsList.join(", ")
+    : (state.category ? "None selected (General category enquiry)" : "No parts selected yet (Choose category first)");
+
+  if ($("sumCar")) $("sumCar").textContent = car;
+  if ($("sumCategory")) $("sumCategory").textContent = state.categoryName || "Not selected yet (Choose category above)";
+  if ($("sumParts")) $("sumParts").textContent = partsText;
+  if ($("sumPartsCount")) $("sumPartsCount").textContent = partsCount;
+
+  // Active step pill highlight
+  if ($("pillStep1")) $("pillStep1").classList.toggle("active", !state.brand);
+  if ($("pillStep2")) $("pillStep2").classList.toggle("active", Boolean(state.brand && !state.category));
+  if ($("pillStep3")) $("pillStep3").classList.toggle("active", Boolean(state.category && partsCount === 0));
+  if ($("pillStep4")) $("pillStep4").classList.toggle("active", partsCount > 0);
+
+  // Sticky floating mobile bar
+  const stickyBar = $("stickyOrderBar");
+  if (stickyBar) {
+    const hasAnySelection = Boolean(state.brand || partsCount > 0 || state.category);
+    stickyBar.classList.toggle("visible", hasAnySelection);
+    if ($("stickyCarText")) {
+      $("stickyCarText").textContent = state.brand ? (state.model ? `${state.brand} ${state.model}` : state.brand) : "Select Your Car";
+    }
+    if ($("stickyPartsCount")) {
+      $("stickyPartsCount").textContent = partsCount > 0
+        ? `${partsCount} part${partsCount > 1 ? "s" : ""} selected`
+        : (state.category ? `Category: ${state.categoryName}` : "Choose category above");
     }
   }
-  updateProgressBar();
 }
-function getValue(id){return $(id) ? $(id).value.trim() : "";}
-function makeMessage(){
-  const isSpecific = $("bookSpecificSchedule") && $("bookSpecificSchedule").checked;
-  let timingSection = "";
-  if (!isSpecific) {
-    timingSection = `📅 *SERVICE TIMING*\n• Mode: 🚨 URGENT (Immediate Service / As Soon As Possible)`;
+
+function makeMessage() {
+  const carText = state.brand
+    ? `${state.brand} ${state.model || ""}${state.year ? " (" + state.year + ")" : ""}`.trim()
+    : "Not specified yet (Please assist with fitment for my car)";
+
+  const catText = state.categoryName || "General Spare Parts Enquiry";
+  const partsList = selectedPartNames();
+  let partsSection = "";
+  if (partsList.length > 0) {
+    partsSection = `⚙️ *SELECTED SPARE PARTS (${partsList.length})*\n` + partsList.map(p => `• ${p}`).join("\n");
   } else {
-    const date = getValue("date") || "Flexible / To be confirmed";
-    const time = getValue("time") || "Flexible / To be confirmed";
-    timingSection = `📅 *PREFERRED TIMING*\n• Date: ${date}\n• Time: ${time}`;
+    partsSection = `⚙️ *PARTS ENQUIRY*\n• Looking for parts in: ${catText}`;
   }
 
-  const coords = state.coordinates ? `\n• GPS Pin: https://maps.google.com/?q=${state.coordinates.lat},${state.coordinates.lng}` : "";
-  const servicesList = selectedServiceNames().length ? selectedServiceNames().map(x => "• " + x).join("\n") : "• None selected";
-  const partsList = selectedPartNames().length ? selectedPartNames().map(x => "• " + x).join("\n") : "• None selected";
+  const customPart = $("customPartInput") ? $("customPartInput").value.trim() : "";
+  const customSection = customPart ? `\n\n📝 *CUSTOM PART / SPECIFIC REQUEST*\n• ${customPart}` : "";
 
-  const rawPhone = getValue("phone");
-  const normPhone = normalizeWhatsAppNumber(rawPhone, WA_DEFAULT_COUNTRY_CODE);
-  const displayPhone = normPhone ? `+${normPhone}` : (rawPhone || "Not provided");
+  const city = $("cityInput") ? $("cityInput").value.trim() : "";
+  const citySection = city ? `\n\n📍 *DELIVERY AREA / CITY*\n• ${city}` : "";
 
-  return `*CAR SERVICE & SPARE PARTS REQUEST*\n*${BUSINESS_NAME}*\n\n` +
-    `👤 *CUSTOMER CONTACT*\n` +
-    `• Name: ${getValue("name")}\n` +
-    `• Phone: ${displayPhone}\n\n` +
+  return `*CAR SPARE PARTS ORDER / ENQUIRY*\n*${BUSINESS_NAME}*\n\n` +
     `🚗 *VEHICLE INFO*\n` +
-    `• Brand: ${state.brand || "Not selected"}\n` +
-    `• Model: ${state.model || "Not selected"}\n` +
-    `• Year: ${state.year || "Not specified"}\n\n` +
-    `🛠️ *SERVICES REQUESTED*\n` +
-    `${servicesList}\n\n` +
-    `⚙️ *SPARE PARTS REQUIRED*\n` +
-    `${partsList}\n\n` +
-    `📍 *SERVICE LOCATION*\n` +
-    `• Type: ${state.location}\n` +
-    `• Address: ${getValue("address") || "Not provided"}${coords}\n\n` +
-    `${timingSection}\n\n` +
-    `📝 *ADDITIONAL NOTES*\n` +
-    `${getValue("notes") || "None"}\n\n` +
-    `_Please verify technician availability and provide an estimated quotation._\n_Thank you!_`;
+    `• Car: ${carText}\n\n` +
+    `📦 *CATEGORY*\n` +
+    `• ${catText}\n\n` +
+    `${partsSection}` +
+    `${customSection}` +
+    `${citySection}\n\n` +
+    `_Hello Zee Auto Park! Please verify part availability, prices, and doorstep delivery for my car._\n_Thank you!_`;
 }
 
-function highlightMissingField(el) {
-  if (!el) return;
-  el.classList.add("highlight-missing");
-  setTimeout(() => el.classList.remove("highlight-missing"), 2200);
-}
-
-function sendWhatsApp(){
+function sendWhatsApp() {
   try {
-    const name = getValue("name"), phone = getValue("phone"), address = getValue("address");
-    if(!state.brand || !state.model){
-      toast("Please select your car brand and model (Required).");
+    if (!state.brand) {
+      toast("Tip: Choose your car brand for guaranteed fitment!");
       const carsSec = $("cars");
-      if (carsSec) carsSec.scrollIntoView({behavior:"smooth"});
-      highlightMissingField($("modelSelect") || $("brands"));
+      if (carsSec) carsSec.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const message = makeMessage();
+    const url = buildWhatsAppUrl(message, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+    if (!url) {
+      toast("Could not generate WhatsApp link.");
       return;
     }
-    if(!name){
-      toast("Please enter your name (Required).");
-      highlightMissingField($("name"));
-      if($("name")) {
-        $("name").focus();
-        $("name").scrollIntoView({behavior:"smooth", block:"center"});
-      }
-      return;
-    }
-    const normalizedPhone = normalizeWhatsAppNumber(phone, WA_DEFAULT_COUNTRY_CODE);
-    if(!normalizedPhone || normalizedPhone.length < 8){
-      toast("Please enter a valid WhatsApp phone number (Required).");
-      const phoneWrap = $("phone") ? $("phone").closest(".phone-input-wrap") || $("phone") : null;
-      highlightMissingField(phoneWrap);
-      if($("phone")) {
-        $("phone").focus();
-        $("phone").scrollIntoView({behavior:"smooth", block:"center"});
-      }
-      return;
-    }
-    if(!address){
-      toast("Please enter your service location or address (Required).");
-      highlightMissingField($("address"));
-      if($("address")) {
-        $("address").focus();
-        $("address").scrollIntoView({behavior:"smooth", block:"center"});
-      }
-      return;
-    }
-    if(WHATSAPP_NUMBER.includes("X")){
-      toast("Please verify WhatsApp number settings.");
-      return;
-    }
-    const messageUrl = buildWhatsAppUrl(makeMessage(), WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
-    if (!messageUrl) {
-      toast("Could not create WhatsApp link. Please check number.");
-      return;
-    }
-    toast("Opening WhatsApp with your request details...");
-    openWhatsApp(messageUrl);
+    toast("Opening WhatsApp with your spare parts order...");
+    openWhatsApp(url);
   } catch (err) {
-    console.error("Error generating WhatsApp request:", err);
-    toast("An unexpected error occurred. Please check details and try again.");
+    console.error("WhatsApp error:", err);
+    toast("Could not open WhatsApp. Please try calling us directly.");
   }
 }
 
-function clearAll(){
-  state.brand="";state.model="";state.year="";state.services.clear();state.parts.clear();state.location="Home";state.coordinates=null;
-  $("modelSelect").innerHTML="<option value=''>Choose a model</option>";
-  if($("selectedCar")) $("selectedCar").textContent="No vehicle selected";
-  if($("carYear")) $("carYear").value="";
-  if($("address")) $("address").value="";
-  if($("name")) $("name").value="";
-  if($("phone")) $("phone").value="";
-  if($("date")) $("date").value="";
-  if($("time")) $("time").value="";
-  if($("notes")) $("notes").value="";
-  if($("bookSpecificSchedule")) {
-    $("bookSpecificSchedule").checked = false;
-    const card = $("bookSpecificSchedule").closest(".schedule-question-card");
-    if (card) card.classList.remove("checked");
-    const banner = $("urgentScheduleBanner");
-    const wrap = $("preferredScheduleWrap");
-    if (banner) banner.style.display = "flex";
-    if (wrap) wrap.style.display = "none";
-  }
-  document.querySelectorAll(".location-card").forEach((x,i)=>x.classList.toggle("active",i===0));
-  document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.remove("active"));
-  document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.remove("active"));
-  document.querySelectorAll("[data-symptom]").forEach(c=>c.classList.remove("active"));
-  document.querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
-  if($("partCategory")) $("partCategory").value="none";
-  if($("partSearch")) $("partSearch").value="";
-  renderBrands();renderServices();renderParts();updateSummary();updateProgressBar();toast("Your selections were cleared.");
+function clearAll() {
+  state.brand = "";
+  state.model = "";
+  state.year = "";
+  state.category = null;
+  state.categoryName = "";
+  state.parts.clear();
+
+  if ($("modelSelect")) $("modelSelect").innerHTML = "<option value=''>Choose a model</option>";
+  if ($("selectedCar")) $("selectedCar").textContent = "🚗 No vehicle selected";
+  if ($("carYear")) $("carYear").value = "";
+  if ($("partSearch")) $("partSearch").value = "";
+  if ($("partCategory")) $("partCategory").value = "all";
+  if ($("customPartInput")) $("customPartInput").value = "";
+  if ($("cityInput")) $("cityInput").value = "";
+
+  // Hide spare parts list until a new category is selected
+  const partsSec = $("parts");
+  if (partsSec) partsSec.classList.add("parts-locked");
+
+  // Show category prompt and hide action bar
+  if ($("categoryPromptBox")) $("categoryPromptBox").classList.remove("hidden");
+  if ($("categoryActionBar")) $("categoryActionBar").classList.add("hidden");
+
+  renderBrands();
+  renderCategories();
+  renderParts();
+  updateSummary();
+  toast("Your selections were cleared.");
 }
 
-function init(){
-  document.addEventListener("click",e=>{
-    const brand=e.target.closest("[data-brand]"); if(brand) selectBrand(brand.dataset.brand);
-    const service=e.target.closest("[data-service]"); if(service) toggleService(service.dataset.service);
-    const part=e.target.closest("[data-part]"); if(part) togglePart(part.dataset.part);
-    const loc=e.target.closest("[data-location]"); if(loc){state.location=loc.dataset.location;document.querySelectorAll(".location-card").forEach(x=>x.classList.toggle("active",x===loc));updateSummary();}
+function init() {
+  document.addEventListener("click", e => {
+    // Brand selection
+    const brand = e.target.closest("[data-brand]");
+    if (brand) selectBrand(brand.dataset.brand);
 
-    // Promotional triple deal advertisement click handler
+    // Category card selection
+    const catCard = e.target.closest("[data-category-id]");
+    if (catCard) selectCategory(catCard.dataset.categoryId, true);
+
+    // Part select toggle button
+    const partBtn = e.target.closest("[data-part]");
+    if (partBtn) {
+      e.stopPropagation();
+      togglePart(partBtn.dataset.part);
+      return;
+    }
+
+    // Part direct WhatsApp button
+    const directPart = e.target.closest("[data-direct-part]");
+    if (directPart) {
+      e.preventDefault();
+      e.stopPropagation();
+      directPartWhatsApp(directPart.dataset.directPart);
+      return;
+    }
+
+    // Special offer claim deal buttons
     const dealBtn = e.target.closest("[data-deal-part]");
     if (dealBtn) {
       e.preventDefault();
@@ -691,7 +885,7 @@ function init(){
       const dealMrp = dealBtn.dataset.dealMrp || "";
       const dealDiscount = dealBtn.dataset.dealDiscount || "";
       const priceText = dealPrice ? `\n*OFFER DEAL PRICE:* ${dealPrice}${dealMrp ? ` (Regular MRP: ${dealMrp})` : ""}` : "";
-      const promoMsg = `Hello ${BUSINESS_NAME},\n\nI saw your Special Offer advertisement on your website:\n\n*OFFER:* ${partName}${priceText}\n*BENEFIT / DISCOUNT:* ${dealDiscount}\n\nI would like to claim this offer and enquire about vehicle compatibility for my car and availability for doorstep service.\n\nThank you!`;
+      const promoMsg = `Hello ${BUSINESS_NAME},\n\nI saw your Special Offer advertisement on your website:\n\n*OFFER:* ${partName}${priceText}\n*BENEFIT / DISCOUNT:* ${dealDiscount}\n\nI would like to claim this offer and enquire about vehicle compatibility for my car and availability for doorstep delivery.\n\nThank you!`;
       const url = buildWhatsAppUrl(promoMsg, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
       if (url) {
         toast(`Opening WhatsApp for ${partName} offer...`);
@@ -700,148 +894,111 @@ function init(){
       return;
     }
 
-    const wa=e.target.closest("[data-whatsapp]");
-    if(wa){
+    // Generic WhatsApp button
+    const wa = e.target.closest("[data-whatsapp]");
+    if (wa) {
       e.preventDefault();
-      if(WHATSAPP_NUMBER.includes("X")){toast("Add the WhatsApp number in script.js first.");return;}
-      const messageUrl = buildWhatsAppUrl("Hello Zee Auto Park, I would like to enquire about your car repair and spare-parts service.", WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
-      if(!messageUrl){toast("WhatsApp number is missing."); return;}
-      toast("Opening WhatsApp...");
-      openWhatsApp(messageUrl);
-    }
-  });
-  $("modelSelect").addEventListener("change",e=>{state.model=e.target.value;updateSummary();$("selectedCar").textContent=state.model?`${state.brand} ${state.model}${state.year?" · "+state.year:""}`:"Choose a model";});
-  $("carYear").addEventListener("input",e=>{state.year=e.target.value;updateSummary();if(state.brand&&state.model)$("selectedCar").textContent=`${state.brand} ${state.model}${state.year?" · "+state.year:""}`;});
-  $("partSearch").addEventListener("input",renderParts);
-  $("partCategory").addEventListener("change",()=>{
-    const catVal = $("partCategory").value;
-    document.querySelectorAll(".cat-pill").forEach(p=>p.classList.toggle("active",p.dataset.cat===catVal));
-    renderParts();
-  });
-
-  // Category Pills selection & scroll sync
-  document.querySelectorAll(".cat-pill").forEach(pill=>{
-    pill.addEventListener("click",()=>{
-      document.querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
-      pill.classList.add("active");
-      const targetCat = pill.dataset.cat;
-      $("partCategory").value = targetCat;
-      renderParts();
-    });
-  });
-
-  // Quick Date selector chips
-  document.querySelectorAll("[data-date-chip]").forEach(chip=>{
-    chip.addEventListener("click",()=>{
-      const type = chip.dataset.dateChip;
-      const today = new Date();
-      let targetDate = "";
-      if (type === "today") {
-        targetDate = today.toISOString().split("T")[0];
-      } else if (type === "tomorrow") {
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        targetDate = tomorrow.toISOString().split("T")[0];
-      } else if (type === "custom") {
-        $("date").focus();
-        if ($("date").showPicker) { try { $("date").showPicker(); } catch(err){} }
-        return;
+      const messageUrl = buildWhatsAppUrl("Hello Zee Auto Park, I would like to enquire about genuine car spare parts and accessories for my vehicle.", WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
+      if (messageUrl) {
+        toast("Opening WhatsApp...");
+        openWhatsApp(messageUrl);
       }
-      $("date").value = targetDate;
-      document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.toggle("active",c===chip));
-      updateSummary();
-    });
-  });
-
-  if ($("date")) {
-    $("date").addEventListener("input",()=>{
-      updateSummary();
-      document.querySelectorAll("[data-date-chip]").forEach(c=>c.classList.remove("active"));
-    });
-  }
-
-  // Quick Time slot cards
-  document.querySelectorAll("[data-time-slot]").forEach(slotCard=>{
-    slotCard.addEventListener("click",()=>{
-      const slotVal = slotCard.dataset.timeSlot;
-      if (slotVal === "ASAP") {
-        const curNotes = $("notes").value.trim();
-        if (!curNotes.includes("URGENT / ASAP")) {
-          $("notes").value = curNotes ? `${curNotes} (URGENT / ASAP service requested)` : "URGENT / ASAP service requested";
-        }
-        const now = new Date();
-        const hrs = String(now.getHours()).padStart(2, "0");
-        const mins = String(now.getMinutes()).padStart(2, "0");
-        $("time").value = `${hrs}:${mins}`;
-      } else {
-        $("time").value = slotVal;
-      }
-      document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.toggle("active",c===slotCard));
-      updateSummary();
-    });
-  });
-
-  if ($("time")) {
-    $("time").addEventListener("input",()=>{
-      updateSummary();
-      document.querySelectorAll("[data-time-slot]").forEach(c=>c.classList.remove("active"));
-    });
-  }
-
-  // Schedule Mode Checkbox Toggle listener
-  if ($("bookSpecificSchedule")) {
-    $("bookSpecificSchedule").addEventListener("change", () => {
-      const isSpecific = $("bookSpecificSchedule").checked;
-      const banner = $("urgentScheduleBanner");
-      const wrap = $("preferredScheduleWrap");
-      const card = $("bookSpecificSchedule").closest(".schedule-question-card");
-      if (card) card.classList.toggle("checked", isSpecific);
-      if (banner) banner.style.display = isSpecific ? "none" : "flex";
-      if (wrap) wrap.style.display = isSpecific ? "block" : "none";
-      updateSummary();
-      updateProgressBar();
-    });
-  }
-
-  // Common Trouble Symptoms chips
-  document.querySelectorAll("[data-symptom]").forEach(chip=>{
-    chip.addEventListener("click",()=>{
-      chip.classList.toggle("active");
-      const symptom = chip.dataset.symptom;
-      let cur = $("notes").value.trim();
-      if (chip.classList.contains("active")) {
-        $("notes").value = cur ? `${cur}, ${symptom}` : symptom;
-      } else {
-        const regex = new RegExp(`(^|,\\s*)${symptom.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, "i");
-        let cleaned = cur.replace(regex, "").trim().replace(/^,\s*/, "").replace(/,\s*,/g, ",");
-        $("notes").value = cleaned;
-      }
-    });
-  });
-
-  ["name", "phone", "address", "notes"].forEach(id => {
-    const el = $(id);
-    if (el) {
-      el.addEventListener("input", updateProgressBar);
     }
   });
 
-  $("sendWhatsApp").addEventListener("click",sendWhatsApp);
-  $("clearBtn").addEventListener("click",clearAll);
-  $("menuBtn").addEventListener("click",()=> $("mobileNav").classList.toggle("open"));
-  document.querySelectorAll("#mobileNav a").forEach(a=>a.addEventListener("click",()=> $("mobileNav").classList.remove("open")));
-  $("locateBtn").addEventListener("click",()=>{
-    if(!navigator.geolocation){toast("Location is not supported by this browser.");return;}
-    toast("Getting your location...");
-    navigator.geolocation.getCurrentPosition(pos=>{
-      state.coordinates={lat:pos.coords.latitude,lng:pos.coords.longitude};
-      $("address").value=`Current location (GPS): ${pos.coords.latitude.toFixed(6)}, ${pos.coords.longitude.toFixed(6)}`;
-      toast("Location added to your request.");
-      updateProgressBar();
-    },()=>toast("Could not get your location. Please enter it manually."));
+  // Handle click on links to #parts (nav and pills) when no category is selected
+  document.querySelectorAll('a[href="#parts"]').forEach(link => {
+    link.addEventListener("click", e => {
+      if (!state.category) {
+        e.preventDefault();
+        toast("Please choose a category above first to view spare parts!");
+        const catSec = $("categories");
+        if (catSec) catSec.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
 
-  renderBrands();renderServices();renderParts();updateSummary();updateProgressBar();
+  // Model & Year listeners
+  if ($("modelSelect")) {
+    $("modelSelect").addEventListener("change", e => {
+      state.model = e.target.value;
+      updateSummary();
+      if ($("selectedCar")) {
+        $("selectedCar").textContent = state.model
+          ? `🚗 Selected: ${state.brand} ${state.model}${state.year ? " · " + state.year : ""}`
+          : `🚗 Selected: ${state.brand} — choose model`;
+      }
+    });
+  }
+
+  if ($("carYear")) {
+    $("carYear").addEventListener("input", e => {
+      state.year = e.target.value;
+      updateSummary();
+      if (state.brand && state.model && $("selectedCar")) {
+        $("selectedCar").textContent = `🚗 Selected: ${state.brand} ${state.model}${state.year ? " · " + state.year : ""}`;
+      }
+    });
+  }
+
+  // Part search input
+  if ($("partSearch")) {
+    $("partSearch").addEventListener("input", renderParts);
+  }
+
+  // Part category dropdown filter
+  if ($("partCategory")) {
+    $("partCategory").addEventListener("change", e => {
+      selectCategory(e.target.value, false);
+    });
+  }
+
+  // Custom inputs listeners
+  if ($("customPartInput")) {
+    $("customPartInput").addEventListener("input", updateSummary);
+  }
+  if ($("cityInput")) {
+    $("cityInput").addEventListener("input", updateSummary);
+  }
+
+  // WhatsApp order button
+  if ($("sendWhatsApp")) {
+    $("sendWhatsApp").addEventListener("click", sendWhatsApp);
+  }
+
+  // Sticky mobile WhatsApp order button
+  if ($("stickyWaBtn")) {
+    $("stickyWaBtn").addEventListener("click", sendWhatsApp);
+  }
+
+  // Category instant WhatsApp button
+  if ($("catWaDirectBtn")) {
+    $("catWaDirectBtn").addEventListener("click", directCategoryWhatsApp);
+  }
+
+  // Clear button
+  if ($("clearBtn")) {
+    $("clearBtn").addEventListener("click", clearAll);
+  }
+
+  // Mobile navigation
+  if ($("menuBtn")) {
+    $("menuBtn").addEventListener("click", () => {
+      if ($("mobileNav")) $("mobileNav").classList.toggle("open");
+    });
+  }
+
+  document.querySelectorAll("#mobileNav a").forEach(a => {
+    a.addEventListener("click", () => {
+      if ($("mobileNav")) $("mobileNav").classList.remove("open");
+    });
+  });
+
+  // Initial renders
+  renderBrands();
+  renderCategories();
+  renderParts();
+  updateSummary();
 }
 
 document.addEventListener("DOMContentLoaded", init);
