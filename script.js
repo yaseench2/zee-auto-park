@@ -433,8 +433,6 @@ const parts = [
 
 const state = {
   brand: "",
-  model: "",
-  year: "",
   category: null,
   categoryName: "",
   parts: new Set(),
@@ -550,17 +548,13 @@ function renderBrands() {
 
 function selectBrand(brand) {
   state.brand = brand;
-  state.model = "";
-  state.year = "";
   renderBrands();
 
-  if ($("modelSelect")) {
-    $("modelSelect").innerHTML = `<option value="">Choose a ${brand} model</option>` + cars[brand].map(m => `<option value="${m}">${m}</option>`).join("");
-  }
   if ($("selectedCar")) {
-    $("selectedCar").textContent = `🚗 Selected: ${brand} — choose model`;
+    $("selectedCar").textContent = `🚗 Selected Brand: ${brand}`;
   }
   updateSummary();
+  toast(`Selected ${brand}. Next, choose your parts category!`);
 }
 
 function renderCategories() {
@@ -692,11 +686,11 @@ function directPartWhatsApp(partId) {
   if (!part) return;
 
   const carText = state.brand
-    ? `${state.brand} ${state.model || ""}${state.year ? " (" + state.year + ")" : ""}`.trim()
+    ? `Brand: ${state.brand}`
     : "Not specified yet (Please advise fitment)";
 
   const msg = `*SPARE PART ENQUIRY*\n*${BUSINESS_NAME}*\n\n` +
-    `🚗 *VEHICLE:* ${carText}\n` +
+    `🚗 *CAR BRAND:* ${carText}\n` +
     `⚙️ *PART REQUESTED:* ${part[1]}\n` +
     `📦 *CATEGORY:* ${part[2]}\n` +
     `ℹ️ *SPECIFICATION:* ${part[3]}\n\n` +
@@ -711,12 +705,12 @@ function directPartWhatsApp(partId) {
 
 function directCategoryWhatsApp() {
   const carText = state.brand
-    ? `${state.brand} ${state.model || ""}${state.year ? " (" + state.year + ")" : ""}`.trim()
+    ? `Brand: ${state.brand}`
     : "Not specified yet";
 
   const catText = state.categoryName || "Spare Parts";
   const msg = `*SPARE PARTS CATEGORY ENQUIRY*\n*${BUSINESS_NAME}*\n\n` +
-    `🚗 *VEHICLE:* ${carText}\n` +
+    `🚗 *CAR BRAND:* ${carText}\n` +
     `📦 *CATEGORY:* ${catText}\n\n` +
     `_Hello Zee Auto Park! I would like to enquire about available spare parts in the ${catText} category for my car. Please share options and prices. Thank you!_`;
 
@@ -728,9 +722,7 @@ function directCategoryWhatsApp() {
 }
 
 function updateSummary() {
-  const car = state.brand
-    ? (state.model ? `${state.brand} ${state.model}${state.year ? " (" + state.year + ")" : ""}` : `${state.brand} — model not selected`)
-    : "No vehicle selected";
+  const car = state.brand || "No brand selected";
 
   const partsList = selectedPartNames();
   const partsCount = partsList.length;
@@ -755,7 +747,7 @@ function updateSummary() {
     const hasAnySelection = Boolean(state.brand || partsCount > 0 || state.category);
     stickyBar.classList.toggle("visible", hasAnySelection);
     if ($("stickyCarText")) {
-      $("stickyCarText").textContent = state.brand ? (state.model ? `${state.brand} ${state.model}` : state.brand) : "Select Your Car";
+      $("stickyCarText").textContent = state.brand ? `Brand: ${state.brand}` : "Select Brand";
     }
     if ($("stickyPartsCount")) {
       $("stickyPartsCount").textContent = partsCount > 0
@@ -767,7 +759,7 @@ function updateSummary() {
 
 function makeMessage() {
   const carText = state.brand
-    ? `${state.brand} ${state.model || ""}${state.year ? " (" + state.year + ")" : ""}`.trim()
+    ? state.brand
     : "Not specified yet (Please assist with fitment for my car)";
 
   const catText = state.categoryName || "General Spare Parts Enquiry";
@@ -786,8 +778,8 @@ function makeMessage() {
   const citySection = city ? `\n\n📍 *DELIVERY AREA / CITY*\n• ${city}` : "";
 
   return `*CAR SPARE PARTS ORDER / ENQUIRY*\n*${BUSINESS_NAME}*\n\n` +
-    `🚗 *VEHICLE INFO*\n` +
-    `• Car: ${carText}\n\n` +
+    `🚗 *CAR BRAND*\n` +
+    `• Brand: ${carText}\n\n` +
     `📦 *CATEGORY*\n` +
     `• ${catText}\n\n` +
     `${partsSection}` +
@@ -820,15 +812,11 @@ function sendWhatsApp() {
 
 function clearAll() {
   state.brand = "";
-  state.model = "";
-  state.year = "";
   state.category = null;
   state.categoryName = "";
   state.parts.clear();
 
-  if ($("modelSelect")) $("modelSelect").innerHTML = "<option value=''>Choose a model</option>";
-  if ($("selectedCar")) $("selectedCar").textContent = "🚗 No vehicle selected";
-  if ($("carYear")) $("carYear").value = "";
+  if ($("selectedCar")) $("selectedCar").textContent = "🚗 No car brand selected";
   if ($("partSearch")) $("partSearch").value = "";
   if ($("partCategory")) $("partCategory").value = "all";
   if ($("customPartInput")) $("customPartInput").value = "";
@@ -876,19 +864,14 @@ function init() {
       return;
     }
 
-    // Special offer claim deal buttons
-    const dealBtn = e.target.closest("[data-deal-part]");
-    if (dealBtn) {
+    // Special offer button - directly to WhatsApp asking for current offers
+    const offerTrigger = e.target.closest(".btn-special-offers, .nav-offer-link");
+    if (offerTrigger) {
       e.preventDefault();
-      const partName = dealBtn.dataset.dealPart || "Special Spare Part";
-      const dealPrice = dealBtn.dataset.dealPrice || "";
-      const dealMrp = dealBtn.dataset.dealMrp || "";
-      const dealDiscount = dealBtn.dataset.dealDiscount || "";
-      const priceText = dealPrice ? `\n*OFFER DEAL PRICE:* ${dealPrice}${dealMrp ? ` (Regular MRP: ${dealMrp})` : ""}` : "";
-      const promoMsg = `Hello ${BUSINESS_NAME},\n\nI saw your Special Offer advertisement on your website:\n\n*OFFER:* ${partName}${priceText}\n*BENEFIT / DISCOUNT:* ${dealDiscount}\n\nI would like to claim this offer and enquire about vehicle compatibility for my car and availability for doorstep delivery.\n\nThank you!`;
+      const promoMsg = `Hello ${BUSINESS_NAME}, I would like to know about your current special offers and deals on genuine car spare parts and accessories. Please share details.`;
       const url = buildWhatsAppUrl(promoMsg, WHATSAPP_NUMBER, WA_DEFAULT_COUNTRY_CODE);
       if (url) {
-        toast(`Opening WhatsApp for ${partName} offer...`);
+        toast("Opening WhatsApp for special offers...");
         openWhatsApp(url);
       }
       return;
@@ -917,29 +900,6 @@ function init() {
       }
     });
   });
-
-  // Model & Year listeners
-  if ($("modelSelect")) {
-    $("modelSelect").addEventListener("change", e => {
-      state.model = e.target.value;
-      updateSummary();
-      if ($("selectedCar")) {
-        $("selectedCar").textContent = state.model
-          ? `🚗 Selected: ${state.brand} ${state.model}${state.year ? " · " + state.year : ""}`
-          : `🚗 Selected: ${state.brand} — choose model`;
-      }
-    });
-  }
-
-  if ($("carYear")) {
-    $("carYear").addEventListener("input", e => {
-      state.year = e.target.value;
-      updateSummary();
-      if (state.brand && state.model && $("selectedCar")) {
-        $("selectedCar").textContent = `🚗 Selected: ${state.brand} ${state.model}${state.year ? " · " + state.year : ""}`;
-      }
-    });
-  }
 
   // Part search input
   if ($("partSearch")) {
